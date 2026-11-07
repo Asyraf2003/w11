@@ -1,0 +1,8 @@
+# Public reference: only reviewed Markdown and this guard belong here.
+*
+!*/
+!*.md
+!.gitignore
+raw/
+evidence/
+private/

@@ -9,7 +9,7 @@ Source: [Microsoft Windows shortcut reference][windows]. These are concise factu
 | Shortcut | Action | Behavior | Conditions | Source |
 |---|---|---|---|---|
 | Win / Ctrl+Esc | Start | Toggle menu | Shell | [MS][windows] |
-| Win+S / Win+Q | Search | Focus search | Results depend on indexing/cloud policy | [MS][windows] |
+| Win+S / Win+Q | Search | Focus search | Win+Q instead invokes Click to Do on eligible Copilot+ PCs; results depend on indexing/cloud policy | [MS][windows], [AI keys][aikeys] |
 | Win+E | Explorer | Open file browser | Shell | [MS][windows] |
 | Win+R | Run | Enter program/path/URI | Execution permissions still apply | [MS][windows] |
 | Win+I | Settings | Open app | Page availability varies | [MS][windows] |
@@ -221,7 +221,8 @@ These defaults belong to applications; they are not universal global bindings. A
 | Ctrl+E / Ctrl+W | Image properties/resize | Image operations | Paint context; differs in browsers | [MS][apps] |
 | Ctrl+R / Ctrl+G | Ruler/grid | View aids | Paint context; not global Refresh | [MS][apps] |
 | Alt+1 / Alt+2 / Alt+3 / Alt+4 / Alt+5 | Calculator mode | Standard/scientific/graphing/programmer/date | Calculator mode/version | [MS][apps] |
-| Ctrl+H / Ctrl+M | Calculator history/memory | Display respective panel | Calculator, not editor Replace | [MS][apps] |
+| Ctrl+H | Calculator history | Open calculation history | Calculator, not editor Replace | [MS][calculator] |
+| Ctrl+M | Calculator memory | Store current value in memory | Calculator; does not open memory panel | [MS][calculator] |
 | Ctrl+T / Ctrl+W / Ctrl+Shift+T | Browser tabs | New/close/reopen | Edge | [MS][edge] |
 | Ctrl+L / Ctrl+K | Browser focus | Address / search | Edge | [MS][edge] |
 | Ctrl+Shift+N | InPrivate | Open private window | Edge policy; not Explorer New Folder | [MS][edge] |
@@ -254,8 +255,10 @@ No UX325/ROG keyboard map is presented as this UM3406GA's physical layout. A sin
 [gestures]: https://support.microsoft.com/en-us/windows/hardware/input-devices/touch-gestures-for-windows
 [apps]: https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-apps-139014e7-177b-d1f3-919c-842cfbe2e8f3
 [gamebar]: https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/get-to-know-xbox-game-bar-on-windows-10
-[edge]: https://support.microsoft.com/en-us/microsoft-edge/keyboard-shortcuts-in-microsoft-edge-50d3edab-30d9-c7e4-21ce-37fe2713cfad
+[edge]: https://support.microsoft.com/en-us/edge/keyboard-shortcuts-in-microsoft-edge
 [terminal]: https://learn.microsoft.com/en-us/windows/terminal/install
-[captions]: https://support.microsoft.com/en-us/windows/use-live-captions-to-better-understand-audio-b52da59c-14b8-4031-aeeb-f6a47e6055df
-[snap]: https://support.microsoft.com/en-us/windows/snap-your-windows-885a9b1e-a983-a3b1-16cd-c531795e6241
+[captions]: https://support.microsoft.com/en-us/accessibility/windows/use-live-captions-to-better-understand-audio
+[snap]: https://support.microsoft.com/en-us/windows/experience/snap-your-windows
 [asuskeys]: https://www.asus.com/support/faq/1038312/
+[aikeys]: https://support.microsoft.com/en-us/windows/ai/ai-features/keyboard-shortcuts-for-recall-and-click-to-do
+[calculator]: https://github.com/microsoft/calculator/blob/main/docs/ManualTests.md
