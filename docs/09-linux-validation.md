@@ -28,7 +28,25 @@ This batch has **three checks**, rather than a percentage of every Windows capab
 
 Initial discovery: WSL **3.0.3.0**, WSLg **1.0.79**, an existing running Ubuntu 24.04 WSL2 distribution, and the official `archlinux` entry in the WSL online catalog. [Arch's official image distribution](https://archlinux.org/download/), [WSL install controls](https://learn.microsoft.com/en-us/windows/wsl/basic-commands).
 
-**Progress: 1/3 checks completed.** A fresh **W11-Lab-Arch** WSL2 distribution is installed on its own virtual disk and has successfully executed Arch's shell, `/etc/os-release` and `pacman`. The existing Ubuntu distribution remains the default. The lab reports kernel **6.18.54.1-microsoft-standard-WSL2**. This is a separate test filesystem, not a claim of security isolation from the Windows host. EQ and limiter tests remain PENDING while the lab's audio package installation runs.
+**Progress: 3/3 checks completed for the first batch.** This is not a percentage of total Windows/Linux parity.
+
+| Check | Actual result, 2026-11-08 | What passed |
+|---|---|---|
+| Separate test filesystem | Fresh **W11-Lab-Arch** WSL2 distribution on its own virtual disk; Arch shell and package manager ran; existing Ubuntu remains default | Independent lab startup and filesystem, not security isolation from Windows |
+| Synthetic equalizer | Requested **+6 dB** at 1 kHz; measured RMS change **+5.9984 dB** | PASS against ±0.15 dB tolerance; real FFmpeg Linux filter execution |
+| Synthetic limiter | Requested maximum amplitude **0.5**; measured peak **−6.0206 dBFS** | PASS against −6.20…−6.00 dBFS tolerance; no physical audio output |
+
+Environment: Arch rolling userspace, kernel **6.18.54.1-microsoft-standard-WSL2**, Arch package **ffmpeg 2:9.0.2-2**. The fresh image's package keyring was initialized using Arch's bundled trust data before installing signed repository packages. Changes are confined to the new lab; no production source was deployed.
+
+Fixture: FFmpeg-generated **1 kHz, 48 kHz sample rate, 2 seconds**. The baseline uses `astats`; the EQ path uses `equalizer=f=1000:t=q:w=1:g=6,astats=metadata=0:reset=0`; the limiter path uses `volume=16,alimiter=limit=0.5:level=false,astats=metadata=0:reset=0`. Every invocation takes the generated source and writes to the **null muxer**. No speaker, microphone or personal file is opened.
+
+Raw baseline/EQ/limiter logs, tool version, the assert-based check and SHA-256 provenance are preserved locally outside this public repository. The test establishes these two generic software DSP operations under WSL. It does not establish a ten-band GUI, an active desktop audio chain, speaker calibration, Cirrus protection, licensed Atmos, NPU acceleration or perceptual equivalence.
+
+## Next useful work
+
+1. Reuse the lab for further controlled software checks only where the result answers a migration decision: audio processing, useful CPU inference or Android protocol tooling. Record the fixture and result instead of treating installation as success.
+2. Use a later authorized native Linux boot from separate media for **ASUS platform controls, real codec/amplifier routing/protection, OLED/display behavior, NPU driver/workload, radio/dock and suspend**. Existing Windows stays available as the comparison reference.
+3. Start physical audio checks from the captured Realtek/Cirrus identity, OEM routing and protection requirements. A software gain/EQ pass is insufficient to choose safe speaker gain or replace amplifier calibration.
 
 Audio processing uses generated signals and file/null output. It will not play through the laptop speakers, use private media or copy proprietary Dolby tuning. Passing EQ/limiting checks can establish generic DSP building blocks; it cannot establish licensed Dolby Atmos reproduction, smart-amplifier protection or safe physical speaker gain. [FFmpeg filter contracts](https://ffmpeg.org/ffmpeg-filters.html).
 
