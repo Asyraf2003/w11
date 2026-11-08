@@ -111,6 +111,20 @@ TaskFirst and WiFi SmartConnect are [documented separately from basic radio capa
 | Touchpad stylus / special smart gestures | Newer touchpads may expose additional edge gestures or pen support; Precision Touchpad alone does not imply these. | UNKNOWN on this unit; [Device Settings](https://www.asus.com/id/support/faq/1045651/) documents model variation |
 | MUX / discrete-GPU mode / RGB / ScreenPad | Generic ASUS software includes controls for hardware configurations outside this evidence set. | UNKNOWN/not applicable without corresponding hardware evidence; never infer from the common app. [Device Settings](https://www.asus.com/global/support/faq/1045651/) |
 
+## Linux portability: platform controls need firmware evidence
+
+The Linux `asus-wmi` source at revision **fa4ad798f6f681031775266044ba1b0cf3c670bd** implements charging-limit and platform-profile interfaces. This is **DOCUMENTED source support**, while exposure and operation on this serviced UM3406GA remain **UNKNOWN** until native boot. A MyASUS toggle does not prove the Linux firmware interface exists. [ASUS WMI source](https://github.com/torvalds/linux/blob/fa4ad798f6f681031775266044ba1b0cf3c670bd/drivers/platform/x86/asus-wmi.c), [platform-profile contract](https://docs.kernel.org/userspace-api/sysfs-platform_profile.html).
+
+| Windows capability | Linux evidence to check first | Important limit |
+|---|---|---|
+| Battery Care / charge limit | Exposed battery `charge_control_end_threshold`; actual charging behavior at the selected threshold | The inspected driver caches its threshold value because firmware has no corresponding readback method; a sysfs number alone is not an independent firmware measurement |
+| Fan/performance profiles | `platform_profile_choices` and the bound ASUS platform driver | Advertised choices differ by firmware; names need not match MyASUS, and a profile does not establish a custom fan-curve API |
+| CPU power preference | Active CPU scaling driver and EPP choices, separately from the platform profile | Linux's `amd-pstate` EPP and ASUS thermal policy are different controls; avoid conflicting owners. [AMD P-state](https://docs.kernel.org/admin-guide/pm/amd-pstate.html) |
+| OLED/gamut/flicker-free dimming | Exact panel, compositor/color path and any actual firmware interface | Existing desktop pixel shifting/color transforms are preserved reference implementations, not verified panel compensation, OEM gamut calibration or equivalent dimming |
+| ALS / keyboard lighting / NumberPad | Existing reference implementation and the actual native sensor/input/LED interfaces | Historical source exists; current hardware behavior is untested. No additional physical keyboard investigation is required for this inventory |
+
+**A native boot is not guaranteed to leave firmware-managed charging state untouched.** In the inspected source, adding a supported ASUS battery hook initializes the threshold to **100** and issues a firmware write; the displayed value is cached. This is a code-path finding, not behavior observed on this unit. Record the Windows-selected limit before a future boot, inspect the driver version actually used, and recheck the limit afterwards. No native boot or threshold write was performed in this session. [Battery hook and initialization](https://github.com/torvalds/linux/blob/fa4ad798f6f681031775266044ba1b0cf3c670bd/drivers/platform/x86/asus-wmi.c#L1639).
+
 ## Fresh installed-stack reconciliation
 
 | Interface/component | November 8 evidence | Boundary |
