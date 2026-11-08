@@ -2,6 +2,14 @@
 
 Phase 3 started **2026-11-08** at the user's request. Windows collection remains the reference; this phase checks useful Linux behavior without replacing the Windows installation. Paint/Photos AI depth and exhaustive physical keyboard checks remain outside the current scope. Android coverage remains about ecosystem capability, not the owner's phone.
 
+## Test only where the result changes a migration decision
+
+The user clarified that this phase is **selective validation**, not retesting every catalog entry. Ordinary shortcuts and standard desktop functions need official behavior plus a Linux mapping; no shortcut-by-shortcut execution campaign is required. Existing passing evidence is reused unless a changed dependency or hardware revision gives a concrete reason to recheck.
+
+Prioritize **speaker/amplifier protection and real tuning, charging limits, thermal/fan policy, suspend/power**, and **NPU acceleration only for a selected workload that needs it**. The current board was serviced, so historical hardware acceptance does not close these gaps. Generic EQ/loudness/routing tests below are complete; more synthetic variants would not establish the remaining hardware behavior.
+
+For camera, networking, Bluetooth, Android and docks, use a short functional check when that workflow is needed, with a suitable peer. Avoid exhaustive permutations, synthetic tests of obvious platform behavior, private-content inspection and additional framework construction. Paint/Photos depth stays deferred.
+
 ## Use the cheapest environment that can establish the result
 
 | Capability class | Useful first environment | Evidence it can establish | Still needs native Linux |
@@ -74,11 +82,13 @@ The user-designated removable drive holds a separate private preservation folder
 
 This establishes byte preservation and basic structured-data readability across the Windows → removable storage → Linux path. It does not verify every fact inside a capture, render every screenshot, restore a driver, or establish feature behavior. A SHA-256 source manifest, Linux verification result and verification-script hashes accompany the private copy; originals were not converted, moved or overwritten.
 
-## Native verification queue and boot constraints
+## Native verification candidates and boot constraints
 
 The selected removable medium is approximately **128 GB class**, **MBR**, with **one exFAT partition** and existing files. Only a new lab folder has been used. An ISO stored in that folder is a transfer artifact; its presence is not proof that the medium boots.
 
 Windows currently reports **Secure Boot enabled**. The official Arch installation ISO does **not** support Secure Boot as supplied, so it is not a ready native-boot path under the unchanged captured policy. No Secure Boot, firmware, TPM, boot-order or partition changes are authorized by merely preparing these files. A separately reviewed boot method is needed. A distribution with an appropriately signed boot chain, such as Ubuntu, can be considered for initial hardware discovery, but its result belongs to that distribution/kernel rather than proving Arch support. [Arch installation-image boundary](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Booting_an_installation_medium), [Ubuntu signed boot chain](https://documentation.ubuntu.com/security/security-features/platform-protections/secure-boot/).
+
+The rows below are possible checks, not a requirement to exhaust every peripheral combination. The first three hardware rows plus suspend are priorities; NPU is workload-dependent and other rows receive a short check when used.
 
 | Native batch | First evidence needed | Completion requires more than enumeration |
 |---|---|---|
@@ -106,7 +116,7 @@ Keep raw output private and retain missing-file, permission and driver errors. T
 
 ## Next useful work
 
-1. Reuse existing reference implementations and proofs before adding another test. Further lab checks should answer a migration decision: actual audio-provider compatibility, useful CPU inference or Android protocol tooling. Record the fixture and result instead of treating installation as success.
+1. The generic software DSP and evidence-copy checks are complete. Reuse these results and the existing reference; add another lab test only for a specific unresolved compatibility problem in an actual selected workflow.
 2. Use a later authorized native Linux boot from separate media for **ASUS platform controls, real codec/amplifier routing/protection, OLED/display behavior, NPU driver/workload, radio/dock and suspend**. Existing Windows stays available as the comparison reference.
 3. Start physical audio checks from the captured Realtek/Cirrus identity, OEM routing and protection requirements. A software gain/EQ pass is insufficient to choose safe speaker gain or replace amplifier calibration.
 
