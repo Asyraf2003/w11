@@ -42,9 +42,35 @@ Fixture: FFmpeg-generated **1 kHz, 48 kHz sample rate, 2 seconds**. The baseline
 
 Raw baseline/EQ/limiter logs, tool version, the assert-based check and SHA-256 provenance are preserved locally outside this public repository. The test establishes these two generic software DSP operations under WSL. It does not establish a ten-band GUI, an active desktop audio chain, speaker calibration, Cirrus protection, licensed Atmos, NPU acceleration or perceptual equivalence.
 
+## Second batch: usable audio software and reconstruction bytes
+
+**Progress: 4/4 checks completed in this batch**, on the same Arch WSL lab. These are software checks, not four native hardware passes.
+
+| Check | Controlled fixture / acceptance | Actual result | Evidence status |
+|---|---|---|---|
+| Ten-band EQ chain | Centers **32, 64, 125, 250, 500 Hz, 1, 2, 4, 8, 16 kHz**; one band +6 dB, other nine at zero; separate matching 2-second tones; measure after the first 250 ms; ±0.15 dB | **10/10 centers PASS**, measured **+5.988761…+5.998530 dB** | OBSERVED software processing, CAPTURED; no ten-band desktop GUI tested |
+| Loudness normalization | Generated 10-second 1 kHz tone; `loudnorm=I=-23:TP=-2:LRA=7:print_format=json`; target ±0.2 LU | Filter reports **−23.04 LUFS**, true peak **−19.97 dBTP**: PASS | OBSERVED reported output, CAPTURED; not an independent loudness-meter comparison or Dolby's real-time volume leveler |
+| Stereo routing | Generated L=440 Hz / R=880 Hz with different amplitudes; swap channels; compare every float sample against the opposite original channel | Maximum absolute sample error **0**, finite output: PASS | OBSERVED software routing, CAPTURED; no physical speaker assignment or Atmos rendering claim |
+| Existing speaker-tuning reconstruction | Existing reference revision **20543c6**; run its 12 focused tests against a Linux extraction, with deployment targets confined to temporary directories | **12/12 PASS** after LF-preserving export; tuning hashes, routing guards and temporary apply/verify/rollback checks passed | OBSERVED test behavior, CAPTURED; source repository and actual desktop audio unchanged |
+
+The reconstruction check caught a real copy problem: the Windows checkout and a default Windows Git archive both produced **10 passing tests, one failure and one error**. `core.autocrlf=true` converted the graph and license from LF to CRLF, breaking their declared hashes. A byte comparison confirmed that CRLF conversion explains the differences; the binary impulse-response file was unchanged. Do not replace expected hashes to accept the altered copy.
+
+The successful export used command-scoped settings, leaving the existing Git configuration and reference checkout untouched:
+
+```sh
+git -c core.autocrlf=false -c core.eol=lf archive --format=tar \
+  --output=audio-source.tar 20543c6bdb54e4eb90fcb4a03402d56188c9f7e3 \
+  desired/host/zenbook/bin/audio desired/host/zenbook/audio tests/test-audio-oem.py
+# Extract inside the Linux lab, then run: python -B tests/test-audio-oem.py -v
+```
+
+Git's attributes/configuration control line-ending conversion; the observed archive behavior above belongs to the tested Windows Git environment. Verify resulting bytes on the destination rather than assuming an archive or a successful copy preserves declared hashes. [Git line-ending rules](https://git-scm.com/docs/gitattributes), [Git archive](https://git-scm.com/docs/git-archive).
+
+Generated-input commands, logs, results, original failing copies and successful LF export are preserved privately with SHA-256 manifests. The user-designated removable drive now contains a separate lab folder; its existing files and partitions were preserved. It is **storage for evidence and transfer artifacts**, not an already boot-tested Linux medium. No raw OEM tuning, impulse response or private reference source is published here.
+
 ## Next useful work
 
-1. Reuse the lab for further controlled software checks only where the result answers a migration decision: audio processing, useful CPU inference or Android protocol tooling. Record the fixture and result instead of treating installation as success.
+1. Reuse existing reference implementations and proofs before adding another test. Further lab checks should answer a migration decision: actual audio-provider compatibility, useful CPU inference or Android protocol tooling. Record the fixture and result instead of treating installation as success.
 2. Use a later authorized native Linux boot from separate media for **ASUS platform controls, real codec/amplifier routing/protection, OLED/display behavior, NPU driver/workload, radio/dock and suspend**. Existing Windows stays available as the comparison reference.
 3. Start physical audio checks from the captured Realtek/Cirrus identity, OEM routing and protection requirements. A software gain/EQ pass is insufficient to choose safe speaker gain or replace amplifier calibration.
 
