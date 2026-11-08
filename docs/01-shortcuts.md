@@ -283,7 +283,7 @@ For the much larger screen-reader-specific command set, keep Microsoft's [Narrat
 | F10 hotkey function | AI microphone mode | Switch 360° Recording / selected alternate mode | OBSERVED UI description in user screenshot S05, 2026-11-08; physical execution untested; Fn mode controls top-row interpretation | Private UI evidence |
 | NumberPad corner controls | Touchpad/numeric pad | Integrated numeric overlay | Historical NumberPad UI and filter stack AVAILABLE/CAPTURED; current corner gestures UNKNOWN | Private baseline |
 
-No UX325/ROG keyboard map is presented as this UM3406GA's physical layout. A single physical photo/manual page and a harmless hotkey check can close that gap later.
+This harvest uses Windows defaults, general ASUS hotkey documentation and the captured MyASUS Fn-mode description. The official [UM3406GA manual index][um3406manuals] is a reusable family reference. A complete physical per-SKU key validation is outside this pass and is not a prerequisite for preserving the documented shortcut inventory.
 
 The November 8 MyASUS screenshots show **Locked Fn key / hotkey-first** selected, and both touchpad and NumberPad **Unlock**. Unlock means allowed input, not proof the numeric overlay is currently lit.
 
@@ -305,3 +305,4 @@ The November 8 MyASUS screenshots show **Locked Fn key / hotkey-first** selected
 [recorder]: https://support.microsoft.com/en-us/windows/apps/sound-recorder-app-for-windows-faq
 [rdpkeys]: https://learn.microsoft.com/en-us/windows/win32/termserv/terminal-services-shortcut-keys
 [narrator]: https://support.microsoft.com/en-us/accessibility/windows/narrator/appendix-b-narrator-keyboard-commands-and-touch-gestures
+[um3406manuals]: https://www.asus.com/supportonly/um3406ga/helpdesk_manual/
