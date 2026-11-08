@@ -1,6 +1,6 @@
 # Shortcuts and interactions
 
-Checked against official references on 2026-11-08. All mappings below are **DOCUMENTED** defaults unless specifically marked otherwise. Their execution on this Zenbook is **UNKNOWN** unless historical evidence is identified. No destructive shortcuts were exercised. `Win` means the Windows-logo key; `+` means keys held together. Remapping, Fn mode, app focus, keyboard layout and policy can change behavior.
+Checked against official references on 2026-11-08. Mappings below are **DOCUMENTED** defaults unless specifically marked otherwise; the Paint/Notepad legacy app-source gap is identified below. Their execution on this Zenbook is **UNKNOWN** unless historical evidence is identified. No destructive shortcuts were exercised. `Win` means the Windows-logo key; `+` means keys held together. Remapping, Fn mode, app focus, keyboard layout and policy can change behavior.
 
 ## Start, shell, search and system
 
@@ -183,7 +183,7 @@ Source: [Microsoft Windows shortcut reference][windows]. These are concise factu
 | Left Alt+Left Shift+Num Lock | Mouse Keys | Numeric keypad pointer | Shortcut enabled | [MS][access] |
 | Win+Ctrl+L | Live captions | Open captioning | Language model availability | [MS][captions] |
 
-Older references list Win+Ctrl+S for Windows Speech Recognition. That component was replaced by voice access in Windows 11 24H2; treat this as a historical mapping, not a guaranteed modern activation path.
+Older references list Win+Ctrl+S for Windows Speech Recognition. Microsoft dates its replacement by voice access to September 2024 on Windows 11 22H2 and later; treat this as a historical mapping, not a guaranteed modern activation path. [Replacement notice][wsr]
 
 ## Mouse, touchpad, touchscreen and Snap interactions
 
@@ -210,17 +210,18 @@ Source: [Microsoft touch and precision-touchpad gestures][gestures], [Snap][snap
 
 ## Built-in application and terminal context
 
-These defaults belong to applications; they are not universal global bindings. App versions can add/remove them. Sources: [Windows app reference][apps], [Edge][edge], [Terminal][terminal].
+These defaults belong to applications; they are not universal global bindings. App versions can add/remove them. Sources: [legacy Windows app reference][apps], [Edge][edge], [Terminal][terminal]. **Source gap:** Microsoft's legacy app-reference URL now redirects to its generic Windows list. Paint/Notepad-specific mappings below are retained as legacy reference knowledge with **UNKNOWN current documentation verification and current execution**, rather than claimed as newly verified. Calculator mappings use Microsoft's open-source implementation/test documentation.
 
 | Shortcut | Action | Behavior | Conditions | Source |
 |---|---|---|---|---|
-| Ctrl+N / Ctrl+O / Ctrl+S / Ctrl+Shift+S | Document lifecycle | New/open/save/save as | Supporting editor, including Paint/Notepad | [MS][apps] |
+| Ctrl+N / Ctrl+O / Ctrl+S | Document lifecycle | New/open/save | Supporting editor, including Paint/Notepad; source-gap caveat above | [MS][apps] |
+| Ctrl+Shift+S / F12 | Save as | Save with new location/name | App-dependent; classic Paint uses F12; source-gap caveat above | [MS][apps] |
 | Ctrl+P | Print | Print dialog | Supporting app/printer or PDF output | [MS][apps] |
 | Ctrl+F / Ctrl+H | Find/replace | Text search/edit | Notepad/editor context | [MS][apps] |
 | Ctrl+G / F5 | Go to/date | Go to line / insert timestamp | Notepad context | [MS][apps] |
 | Ctrl+E / Ctrl+W | Image properties/resize | Image operations | Paint context; differs in browsers | [MS][apps] |
 | Ctrl+R / Ctrl+G | Ruler/grid | View aids | Paint context; not global Refresh | [MS][apps] |
-| Alt+1 / Alt+2 / Alt+3 / Alt+4 / Alt+5 | Calculator mode | Standard/scientific/graphing/programmer/date | Calculator mode/version | [MS][apps] |
+| Alt+1 / Alt+2 / Alt+3 / Alt+4 / Alt+5 | Calculator mode | Standard/scientific/graphing/programmer/date | Calculator mode/version | [MS][calculator] |
 | Ctrl+H | Calculator history | Open calculation history | Calculator, not editor Replace | [MS][calculator] |
 | Ctrl+M | Calculator memory | Store current value in memory | Calculator; does not open memory panel | [MS][calculator] |
 | Ctrl+T / Ctrl+W / Ctrl+Shift+T | Browser tabs | New/close/reopen | Edge | [MS][edge] |
@@ -253,8 +254,8 @@ No UX325/ROG keyboard map is presented as this UM3406GA's physical layout. A sin
 [windows]: https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows
 [access]: https://support.microsoft.com/en-us/accessibility/windows/windows-keyboard-shortcuts-for-accessibility
 [gestures]: https://support.microsoft.com/en-us/windows/hardware/input-devices/touch-gestures-for-windows
-[apps]: https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-apps-139014e7-177b-d1f3-919c-842cfbe2e8f3
-[gamebar]: https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/get-to-know-xbox-game-bar-on-windows-10
+[apps]: https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-apps-139014e7-177b-d1f3-eb2e-7298b2599a34
+[gamebar]: https://support.microsoft.com/en-us/accessibility/windows/use-a-screen-reader-to-record-your-screen-with-xbox-game-bar
 [edge]: https://support.microsoft.com/en-us/edge/keyboard-shortcuts-in-microsoft-edge
 [terminal]: https://learn.microsoft.com/en-us/windows/terminal/install
 [captions]: https://support.microsoft.com/en-us/accessibility/windows/use-live-captions-to-better-understand-audio
@@ -262,3 +263,4 @@ No UX325/ROG keyboard map is presented as this UM3406GA's physical layout. A sin
 [asuskeys]: https://www.asus.com/support/faq/1038312/
 [aikeys]: https://support.microsoft.com/en-us/windows/ai/ai-features/keyboard-shortcuts-for-recall-and-click-to-do
 [calculator]: https://github.com/microsoft/calculator/blob/main/docs/ManualTests.md
+[wsr]: https://support.microsoft.com/en-us/windows/use-voice-recognition-in-windows-83ff75bd-63eb-0b6c-18d4-6fae94050571

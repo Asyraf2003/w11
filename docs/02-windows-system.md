@@ -155,7 +155,9 @@ The category denominator here is the standard Settings Home plus **11 major cate
 
 The **2026-11-05** private differential capture records Windows 11 **Home Single Language, build 26200**, Ryzen AI 7 445 (6 cores/12 threads), 16 GiB physical memory class, Radeon 840M and a roughly 1 TB Samsung NVMe SSD: **AVAILABLE + CAPTURED historically**, current refresh **UNKNOWN** where collection is denied.
 
-Power-state evidence changed between captures. September reported **S0 Network Connected**; November 5 reported **S0 Network Disconnected**, Hibernate and Fast Startup, with S1/S2/S3 unavailable. Preserve the latest dated report; do not assume connected standby remains available. This is an exposed-state report, not a measured overnight-drain or successful resume test.
+Fresh **2026-11-08** registry metadata reports **26H2, build 26300, UBR 9818, CoreSingleLanguage**; `wsl --version` independently reports host **10.0.26300.9818**. These supersede the November 5 build as a current software reference. `Get-ComputerInfo` returned legacy `Windows 10 Home Single Language`/`2009` fields and null build/hardware fields in the restricted session; those compatibility fields are not evidence that this is Windows 10. Current CIM hardware refresh was denied.
+
+Power-state evidence changed between captures. September reported **S0 Network Connected**; November 5 and fresh November 8 report **S0 Network Disconnected**, Hibernate and Fast Startup, with S1/S2/S3 unavailable. The fresh report explicitly says connected standby is disabled by policy; no policy was changed. Preserve the latest dated report; do not assume connected standby remains available. This is an exposed-state report, not a measured overnight-drain or successful resume test.
 
 Historical Quick Settings observations include Wi-Fi, Bluetooth, airplane mode, energy saver, night light, mobile hotspot, Nearby sharing, Cast/Project, accessibility, live captions and Studio Effects. These establish the controls were exposed; they do not establish paired-device interoperability or enabled processing.
 
@@ -184,6 +186,6 @@ Historical Quick Settings observations include Wi-Fi, Bluetooth, airplane mode, 
 [repair]: https://support.microsoft.com/en-gb/windows/deployment/install-upgrade/fix-issues-by-reinstalling-the-current-version-of-windows
 [rdp]: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-supported-config
 [devdrive]: https://learn.microsoft.com/en-us/windows/dev-drive/
-[language]: https://support.microsoft.com/en-us/windows/experience/system-settings/check-whether-your-version-of-windows-supports-multiple-languages
-[hello]: https://support.microsoft.com/en-us/windows/experience/security-features-and-privacy/windows-sign-in-options-and-account-protection
+[language]: https://support.microsoft.com/en-us/windows/hardware/input-devices/check-whether-a-version-of-windows-supports-multiple-languages
+[hello]: https://support.microsoft.com/en-us/windows/security/windows-security/windows-security-app-overview
 [archives]: https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/zip-and-unzip-files
