@@ -10,9 +10,12 @@ Reviewed 2026-11-08. Generic ASUS documentation describes a feature family; only
 | H2 | Private OLED Care evidence, captured 2026-09-26 | Derived implementation boundaries; no proprietary executable, INF text or extracted strings |
 | H3 | Private map's post-service revalidation, 2026-11-05 | MyASUS 4.0.81.0 and GlideX 4.1.2.0 current-user package metadata; current feature operation untested |
 | H4 | Fresh read-only package/service/CIM/PnP/task capture, 2026-11-08 | Updated nonpersonal versions and interface states below; no settings changed |
+| H5 | Sixteen user-provided screenshots visually reviewed 2026-11-08; MyASUS frames S03–S11 and Dolby S12–S18 | Derived menu names and frame-specific selected values; originals and hash manifest remain private |
 | Official | ASUS sources linked beside capabilities; reviewed 2026-11-08 | Paraphrased behaviors and requirements |
 
 `AVAILABLE (historical)` means the control/package/interface was exposed at the stated date. `OBSERVED` is limited to the recorded UI or behavior described. `CAPTURED` means supporting material remains privately preserved. Fresh runtime evidence belongs in [capability status](08-capability-status.md).
+
+The historical tables retain their original scope. **H4/H5 below supersede earlier current-state UNKNOWN entries only for the interfaces and visible selections actually captured.** No physical behavior is inferred merely from a toggle.
 
 The [official UM3406 specifications](https://www.asus.com/us/laptops/for-home/zenbook/asus-zenbook-14-oled-um3406/techspec/) distinguish HA, KA and GA variants. GA lists Ryzen AI 7 445 and a 50-TOPS NPU. Display/touch/pen configurations vary by market/SKU; a family specification does not prove this unit's panel or input hardware. The [GA support page](https://www.asus.com/jp/laptops/for-home/zenbook/asus-zenbook-14-oled-um3406/helpdeskhelpdesk_download?model2Name=UM3406GA) specifies Windows 11 24H2+ driver compatibility.
 
@@ -122,4 +125,42 @@ TaskFirst and WiFi SmartConnect are [documented separately from basic radio capa
 | Background services | App Service, Optimization, NumberPad, PTP, ScreenXpert Host, Software Manager, Switch, System Analysis and System Diagnosis Running | OBSERVED service state + CAPTURED; feature execution and update outcomes UNKNOWN |
 | Scheduled tasks | OEM optimization, update checker, system analysis and driver-quality diagnosis registered Ready | AVAILABLE + CAPTURED definitions/state; machine-specific suffixes omitted, successful execution unproven |
 
-For remaining GUI evidence, one nonpersonal batch can capture MyASUS About/Device Settings headings, selected power controls, display/OLED controls, input controls and connectivity headings. Automated GUI access was refused by the computer-use approval layer, so the user was asked for screenshots or a readout rather than repeatedly retrying. Physical ambient-light response, charge-limit cycling, fan/noise behavior and pixel-shift timing require deliberate observation beyond package discovery. Keep them UNKNOWN until measured; none blocks the broader inventory.
+## Current UI evidence supplied by the user
+
+Every entry in this table is **AVAILABLE + OBSERVED UI + CAPTURED (2026-11-08)**. S-numbers identify privately retained frames, not published screenshots. Values describe each frame rather than a promised permanent configuration.
+
+| Control | Visible options / selection | Frame and limitation |
+|---|---|---|
+| Quick setting | Entry advertises saved custom profiles and one-click switching | S03–S11; profile contents not opened |
+| Battery Care | **On**, described charging limit **80%** | S03; no charge-cycle measurement |
+| Instant Full-Charge | **Off**; UI describes 100% and automatic return after **24 hours** | S03; Home-page shortcut checkbox clear; return timer not exercised |
+| Fan Profile | Performance / **Standard selected** / Whisper; **On battery** context | S03; AC profile state and RPM effects not tested |
+| Power Mode Synchronization | **Disable** | S03; synchronization behavior not exercised |
+| Sleep Assistant | **On**; UI describes standby-drain monitoring and hibernate fallback | S03/S04; not an overnight test |
+| Integrated-GPU memory | Dedicated memory **Recommended**; shared-memory slider **50%**; displayed hardware-reserved **0.8 GB**, dedicated **0.5 GB**, shared **7.6 GB** | S04; UI values are not proof of firmware reservation or another OS's allocation |
+| Microphone source / modes | Realtek Microphone Array; **360° Recording selected**, Authentic Recording, Single-presenter, Multi-presenter | S05; signal result not measured |
+| Voice Identification | Visible but grey/off under unselected single-presenter mode; setup link to **IntelliGo Audio Console** | S05; no enrollment performed |
+| AI microphone hotkey | UI identifies **F10** switching between 360° Recording and a selected alternate mode | S04/S05; physical key execution untested, Fn mode matters |
+| AI Noise-Cancelling Speaker | Realtek Speakers selected, **Off** | S05/S06; no listening test |
+| Sound Modes | Dynamic, Game, Movie, Music, **Voice selected in this frame**, Custom 1–3 | S06; later Dolby frames show different selections, not simultaneous settings |
+| Voice Mode Smart Switch | **Enable**; UI describes automatic Voice selection for supported call apps | S06; no call started |
+| Volume Booster | **On** | S07; gain/distortion benefit not measured |
+| OLED Pixel Refresh | **On**; UI describes special screen saver after **30 minutes** idle | S07; screen-saver transition untested |
+| OLED Pixel Shift | UI states permanently enabled and cannot be disabled | S07; mechanism/cadence not measured |
+| Taskbar OLED measures | Automatic hide **On**, transparency **On** | S07; these are displayed controls, not a full Windows shell-setting audit |
+| OLED Flicker-Free Dimming | Slider at **100**; UI recommends Windows brightness above 60% before this adjustment | S07; no PWM/photometric equivalence measurement |
+| Splendid | **Normal selected**, Vivid, Manual, Eye Care, E-Reading | S08; transformations not visually compared |
+| Color / reading adjustments | Manual temperature −50…+50; Eye Care level 1…5; E-Reading grayscale 1…5 and temperature −50…+50 | S08; those alternative profiles are not selected in the frame |
+| Color Gamut | **Native – Default vivid colors** selected | S08; closed dropdown does not establish every alternative gamut |
+| Display reset | Entry for restoring ASUS-recommended display settings; UI says some HDR/adaptive-color restoration requires restart | S08; reset not invoked |
+| Target Mode | **Off**; describes active-window brightness with inactive-area dimming | S09; interaction with auto-hide is described below, not tested |
+| TaskFirst | **Off selected**; Productivity and Communication, Multimedia streaming, Games, Screen Extend | S09; last option specifically references GlideX; no bandwidth test |
+| WiFi SmartConnect | **Off** | S09; automatic router selection not exercised |
+| Touchpad / NumberPad locks | Both **Unlock** | S10; does not mean numeric overlay currently illuminated |
+| Function key | **Locked Fn key selected**: hotkey-first F1–F12; Normal Fn key alternative | S10/S11; exact full physical key map remains unverified |
+| Automatic keyboard backlight | Auto-brighten **Off**, Auto-dim **Off**; UI identifies built-in ambient-light input | S10/S11; actual lux readings/response not tested |
+| Keyboard backlight sleep | **While on battery or on AC power**, **1 Minute(s)** selected; Do nothing and battery-only alternatives | S11; list of every possible timeout not opened |
+
+S09 additionally describes an interaction: enabling both Target Mode and automatic taskbar hiding can cause Windows Do not disturb/Focus assist to route popup notifications to Notification Center. This is **OBSERVED UI description**, not a reproduced state transition.
+
+Automated GUI access was refused by the computer-use approval layer; user-provided screenshots resolved the MyASUS menu gap without an automated retry. Remaining physical gaps are ambient-light response, charging hysteresis/24-hour return, fan/noise effects, OLED dimming behavior and shift timing. Current submenu choices not opened in these frames remain UNKNOWN.

@@ -43,6 +43,31 @@ Historical physical topology places the Cirrus amplifier on **I2CB** and the act
 
 Microsoft Spatial Sound is a platform rendering API. The model-specific Dolby speaker APO path is a separate integration: a laptop's stereo OEM processing cannot automatically be described as an active `ISpatialAudioClient` object endpoint. The selected output provider must be verified independently. [Microsoft's endpoint and object-count boundary][spatial]
 
+## Current Dolby and ASUS audio UI evidence
+
+User-provided screenshots reviewed **2026-11-08** establish the following **AVAILABLE + OBSERVED UI + CAPTURED** controls. The original frames remain outside the public repository. They show user-selected pages at successive moments; do not treat all displayed presets as simultaneously active.
+
+| Control | Visible behavior/options | Frame-specific evidence and limit |
+|---|---|---|
+| Dolby Settings header | **Dolby Atmos** control surface | S12–S18; stronger evidence than package presence, but not an audio-path or consumer license test |
+| Preset list | **Dynamic, Game, Movie, Music, Voice, Custom 1, Custom 2, Custom 3** | S12–S18; each preset is exposed in this OEM UI |
+| Dynamic | Automatic material-adaptive adjustment described | S12 selected frame; no listening/algorithm verification |
+| Game / Movie / Music | Material-specific profiles | S13/S14/S15 respectively; material descriptions are UI claims |
+| Intelligent equalizer | **IEQ off, Detailed, Balanced, Warm** on Game, Movie and Music pages | S13–S15 show IEQ off selected; alternatives exposed |
+| Voice | Voice-focused preset | S16 selected; ASUS S06 also showed Voice selected earlier |
+| Custom equalizer | **10 bands**, **32, 64, 125, 250, 500 Hz; 1, 2, 4, 8, 16 kHz**, visible **−12…+12 dB** scale | S17 Custom 3; sliders shown at 0 dB; not copied proprietary coefficients |
+| Surround virtualizer | Separate switch, **On** | S17 Custom 3; audible spatial effect UNKNOWN |
+| Volume leveler | Separate switch, **On** | S17 Custom 3; dynamic-range/loudness response UNKNOWN |
+| Master effects | **Dolby Atmos effects for speakers and headphones: On** | S18 More Settings; does not establish separately purchased Atmos for Headphones or HDMI spatial-provider activation |
+| ASUS Sound Modes | Same eight named presets; Voice selected in S06 | MyASUS integration OBSERVED UI; no API/chain-order inference |
+| ASUS Voice Mode Smart Switch | **Enable** | S06 describes automatic Voice switching for supported call apps; no call was made |
+| Volume Booster | **On** | S07; acoustic gain, clipping and amplifier behavior unmeasured |
+| Microphone controls | Realtek source, **360° Recording selected**, Authentic, Single-presenter and Multi-presenter options | S05; current mode menu verified, processing quality UNKNOWN |
+| Voice Identification | Grey/off control requiring setup in IntelliGo Audio Console | S05; no voice enrollment or biometric material collected |
+| Receive-side AI noise cancellation | Realtek speaker target, **Off** | S05/S06; independent of Dolby preset selection |
+
+No trial/purchase/activation screen was supplied. The OEM UI is exposed and its effects switch reports On, while **separate headphone/home-theater license entitlement and actual rendered stream remain UNKNOWN**. This preserves useful evidence without upgrading an on-screen label into an acoustic or licensing conclusion.
+
 ## Safely derived OEM tuning facts
 
 The private OEM XML is preserved in the existing `pc/zenbook-um3406ga` evidence. Only structural technical facts are summarized here; no tuning coefficients, private activation/security fields or source XML are republished.
@@ -98,7 +123,7 @@ These facts establish that a model-specific processing configuration was capture
 | LE Audio | Different Bluetooth audio transport and supported hearing-device features | Needs compatible controller/driver/accessory; ordinary Bluetooth presence does not prove LE Audio | DOCUMENTED [LE Audio][leaudio]; actual support UNKNOWN |
 | USB / HDMI / Bluetooth / analog outputs | Different endpoint, format and processing choices | A laptop-speaker preset is not automatically applied or desirable on another endpoint | DOCUMENTED [Core Audio][core], [Spatial Sound][spatial] |
 
-The remaining high-value evidence is a nonpersonal readout of Dolby's selected endpoint, preset names, exposed EQ/effect controls and activation state. User assistance has been requested. Audio quality, microphone benefit, headphone spatial rendering, selected Bluetooth codec and amplifier behavior remain **UNKNOWN** until deliberately observed; none was tested through personal media or calls.
+The supplied UI resolves preset names, EQ/effect controls and the OEM master-switch state. Separate activation/entitlement details, audio quality, microphone benefit, headphone spatial rendering, selected Bluetooth codec and amplifier behavior remain **UNKNOWN** until deliberately observed; none was tested through personal media or calls.
 
 [headphones]: https://helix.dolby.com/experience/headphones/
 [dolbygaming]: https://www.dolby.com/Gaming/

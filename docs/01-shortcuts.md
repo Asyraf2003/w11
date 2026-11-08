@@ -247,9 +247,12 @@ These defaults belong to applications; they are not universal global bindings. A
 | F1–F3 icon functions | Speaker mute/down/up | Audio hotkeys | Historical UM3406GA notes identify these; current physical check UNKNOWN | Private baseline + [ASUS][asuskeys] |
 | F4 icon function | Keyboard light | Manual brightness control | Historical model notes; Fn requirement depends on mode | Private baseline |
 | Other top-row icons | Brightness, touchpad, display, camera, MyASUS, snip | OEM actions | Generic ASUS examples are other models; exact UM3406GA F5–F12 map UNKNOWN | [ASUS][asuskeys] |
+| F10 hotkey function | AI microphone mode | Switch 360° Recording / selected alternate mode | OBSERVED UI description in user screenshot S05, 2026-11-08; physical execution untested; Fn mode controls top-row interpretation | Private UI evidence |
 | NumberPad corner controls | Touchpad/numeric pad | Integrated numeric overlay | Historical NumberPad UI and filter stack AVAILABLE/CAPTURED; current corner gestures UNKNOWN | Private baseline |
 
 No UX325/ROG keyboard map is presented as this UM3406GA's physical layout. A single physical photo/manual page and a harmless hotkey check can close that gap later.
+
+The November 8 MyASUS screenshots show **Locked Fn key / hotkey-first** selected, and both touchpad and NumberPad **Unlock**. Unlock means allowed input, not proof the numeric overlay is currently lit.
 
 [windows]: https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows
 [access]: https://support.microsoft.com/en-us/accessibility/windows/windows-keyboard-shortcuts-for-accessibility
