@@ -114,6 +114,20 @@ Recall snapshot saving, Hello ESS eligibility, Click to Do actions, semantic sea
 
 Keep **device enumeration → driver/firmware readiness → supported model/runtime → completed accelerated workload** as separate evidence. The existing reference's unmerged NPU candidate is source material, not deployed or tested support. Paint/Photos AI remains deferred under the agreed scope. Actual lab results are tracked in [Linux validation](09-linux-validation.md).
 
+### Exact NPU match and required workloads
+
+The user explicitly requires NPU consideration for camera effects, local AI and noise cancellation. **NPU validation is a priority, not an optional follow-up.** Each desired function needs its processing provider recorded; the word AI alone does not establish use of the accelerator.
+
+A focused November 8 hardware-ID query identifies the actual NPU as **AMD PCI 1022:17f0, revision 20** (hexadecimal). Linux upstream revision **fa4ad798f6f681031775266044ba1b0cf3c670bd** contains that device/revision pair and selects **`dev_npu6_info`**. This establishes an exact **DOCUMENTED + CAPTURED driver-table match** rather than a generic Ryzen-family guess. Native binding, firmware/runtime readiness and model execution are still **UNKNOWN**. [Exact upstream device/revision table](https://github.com/torvalds/linux/blob/fa4ad798f6f681031775266044ba1b0cf3c670bd/drivers/accel/amdxdna/amdxdna_pci_drv.c#L66).
+
+| Required function family | Useful acceptance evidence | Current boundary |
+|---|---|---|
+| Camera / Studio Effects-like processing | A selected camera-effect model produces the expected output, with actual NPU execution recorded separately from capture/encoding | Windows Studio Effects UI is captured; no Linux camera model or NPU workload has run. Similar output does not transfer Microsoft's models or prove identical processing |
+| Local AI | A supported model completes on the NPU with provider/device evidence and a controlled nonpersonal input | Exact hardware table match exists; runtime/model compatibility and performance remain untested |
+| AI noise cancellation | A supported noise-reduction model meets real-time quality/latency needs, with its CPU/GPU/NPU provider identified | The preserved Linux reference uses **RNNoise on CPU**. That is a functional candidate, not NPU utilization or IntelliGo equivalence. [RNNoise project](https://github.com/xiph/rnnoise) |
+
+An NPU device node or successful `xrt-smi examine` is readiness evidence; a completed workload is still required. Do not count a CPU fallback as an NPU pass, or assume every camera/audio model compiles for this NPU. Keep alternate processing paths visible while recording any unsupported model/operator gap narrowly.
+
 ## Remaining verification
 
 Reconcile CPU/RAM/NPU/OS build, current-user app versions, model packages and safe feature-setting metadata with the capability-status register. Use existing historical Studio Effects observations where dated. A task-manager NPU graph during a deliberately nonpersonal workload can prove use by that workload; an idle graph cannot prove lack of support. Keep absent packages, permission errors and untested entitlements as `UNKNOWN` unless evidence proves a narrower absence.
