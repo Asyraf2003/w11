@@ -2,6 +2,8 @@
 
 Official-source review: **2026-11-08**. This is a capability reference, not a record of personal phone content. No pairing, messages, photos, clipboard, contacts, or account contents were inspected for this chapter.
 
+**Scope:** Windows ↔ Android as an ecosystem, including vendor-specific restrictions where the official feature contract requires them. This is not an assessment of the owner's personal phone. Phone model/OS examples in official compatibility lists describe eligibility classes; a personal-device inventory or pairing test is not required to complete this reference.
+
 `DOCUMENTED` means the vendor describes the capability. **Actual UM3406GA + phone availability and behavior remain `UNKNOWN` unless the separate runtime/status inventory supplies evidence.** Installing Phone Link, GlideX, a Bluetooth driver, or ADB does not prove successful pairing or an enabled feature. Android model, OS build, app version, region, account type, permissions, and PC update can each change availability.
 
 ## Phone Link and Windows mobile-device integration
@@ -108,15 +110,15 @@ Mirroring sources can intentionally hide protected or app-restricted content. No
 | Receiving Windows Wireless Display | Optional capability `App.WirelessDisplay.Connect` is **NotPresent** | UNAVAILABLE as an installed optional receiver in this capture; does not negate outbound Cast support or underlying Wi-Fi Direct |
 | Bluetooth profiles | Windows driver inventory includes PAN, RFCOMM, A2DP and hands-free components | AVAILABLE + CAPTURED components; active codec, phone calls and tethering UNKNOWN |
 | Quick Share | No matching entry in the narrowly filtered current-user Appx/selected uninstall inventory | UNKNOWN overall installation; this is not an exhaustive all-user/portable-app search |
-| Phone eligibility | No phone model, Android version, app permissions or service entitlement verified | UNKNOWN. No messages, photos, clipboard data, contacts or phone identifiers were read |
+| Per-phone eligibility | Official matrices document OEM/Android/app restrictions; no personal device evaluation performed | Personal-phone verification is outside this reference's scope. No messages, photos, clipboard data, contacts or phone identifiers were read |
 
 ## Remaining verification gaps
 
-- Identify only the phone model/Android version and app versions needed to evaluate feature eligibility; retain no phone identifiers in the public reference.
-- Confirm Phone Link, Windows Mobile devices, Google Quick Share and GlideX availability from settings-only screens. Do not open personal feeds or galleries to prove installation.
+- For a future concrete deployment, compare the chosen Android model/OS/app versions against the linked official matrix. No personal-phone collection is pending for this ecosystem harvest.
+- Current Phone Link/cross-device/GlideX PC installation is verified above; Quick Share exposure remains UNKNOWN. Settings-only inspection can refine this later without opening feeds or galleries.
 - Use synthetic test files, test notifications and a blank phone screen for any later transfer/mirroring test. Calls, microphone/camera use, clipboard synchronization and phone permissions need explicit physical/session verification.
 - Test Miracast with a compatible phone/receiver before claiming projection; Google Cast and Miracast are separate protocols.
-- Check carrier hotspot entitlement and actual phone OS/OEM restrictions. A missed or denied query remains `UNKNOWN`, not `UNAVAILABLE`.
+- Carrier hotspot entitlement and actual peer behavior are deployment-specific. A missed or denied query remains `UNKNOWN`, not `UNAVAILABLE`; documented ecosystem functionality does not require a test against the owner's phone.
 
 [PL]: https://support.microsoft.com/en-us/windows/apps/phonelink/phone-link-requirements-and-setup
 [NOTIFY]: https://support.microsoft.com/en-au/windows/apps/view-and-manage-mobile-notifications-on-your-pc
