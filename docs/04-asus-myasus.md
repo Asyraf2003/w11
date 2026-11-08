@@ -115,13 +115,13 @@ TaskFirst and WiFi SmartConnect are [documented separately from basic radio capa
 
 | Interface/component | November 8 evidence | Boundary |
 |---|---|---|
-| MyASUS | Current-user package 4.0.82.0 | AVAILABLE + CAPTURED; current Device Settings selections UNKNOWN pending user UI evidence |
+| MyASUS | Current-user package 4.0.82.0 | AVAILABLE + CAPTURED; H5 below supplies current visible Device Settings selections |
 | ASUS System Control Interface v3 | Present PnP device OK; driver 3.1.73.0 | AVAILABLE + CAPTURED; does not prove every generic ASUS feature |
 | Precision Touchpad | Present PnP device OK; driver 17.0.0.30; NumberPad service Running | AVAILABLE + CAPTURED; do not substitute the separate historical PTP filter branch |
 | Splendid / OLED | MyASUS_Splendid monitor node OK | AVAILABLE + CAPTURED interface; selected gamut, actual transformations and current shifter activity UNKNOWN |
 | Sensors / Studio camera | AMD UMDF Sensor, FHD/IR cameras and Studio Effects camera/driver present OK | AVAILABLE + CAPTURED; sensor-hub presence is not presence-sensing proof |
 | GlideX | App 4.3.5.0; Win32 service-installer registration 4.1.2.0 | AVAILABLE + CAPTURED; different components have independent version numbers |
-| ScreenXpert-related stack | ScreenPadMaster 4.0.25.0 package; ScreenXpert Host Service Running | AVAILABLE + CAPTURED components; no inference of physical ScreenPad/DUO hardware |
+| ScreenXpert stack | ScreenPadMaster 4.0.25.0 package mapped to ScreenXpert by Get-StartApps; Host Service Running | AVAILABLE + CAPTURED application identity; no inference of physical ScreenPad/DUO hardware |
 | Background services | App Service, Optimization, NumberPad, PTP, ScreenXpert Host, Software Manager, Switch, System Analysis and System Diagnosis Running | OBSERVED service state + CAPTURED; feature execution and update outcomes UNKNOWN |
 | Scheduled tasks | OEM optimization, update checker, system analysis and driver-quality diagnosis registered Ready | AVAILABLE + CAPTURED definitions/state; machine-specific suffixes omitted, successful execution unproven |
 

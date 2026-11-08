@@ -11,8 +11,11 @@ A practical reference of Windows 11 behavior, requirements, interfaces, and ASUS
 - [Dolby, audio processing and Windows audio interfaces](docs/05-dolby-audio.md)
 - [Windows and Android integration](docs/06-android-integration.md)
 - [Advanced Windows interfaces and internals](docs/07-windows-internals.md)
+- [Evidence register, coverage and remaining manual gaps](docs/08-capability-status.md)
 
-Additional completed domains are added incrementally. There is no claim of absolute completeness: Windows builds, Store applications, OEM packages, accounts, region and cloud rollouts change the available surface.
+All seven requested domain families have official-source coverage. The evidence register distinguishes current native results, historical observations, supplied UI evidence and remaining manual gaps. There is no claim of absolute completeness: Windows builds, Store applications, OEM packages, accounts, region and cloud rollouts change the available surface.
+
+This is **phase 2: Windows knowledge collection and preservation**. Phase 3, evaluating feasibility on Linux, has not started.
 
 ## Evidence language
 
@@ -33,4 +36,4 @@ Official sources are linked next to the relevant tables. Descriptions are paraph
 
 Historical reference: private `Asyraf2003/pc`, `pc/zenbook-um3406ga/`, local reviewed revision `36f277f` (2026-11-05), including captures dated 2026-09-25/26. `Asyraf2003/arch-blueprint` revision `20543c6` supplies context about already-preserved knowledge, not proof of Windows or Linux runtime behavior. Neither reference repository is modified.
 
-No Windows settings, firmware, registry values, drivers, services, security policies or Frankenstein implementation are changed by this harvest.
+The collector made no changes to Windows settings, firmware, registry values, drivers, services, security policies or Frankenstein implementation. User-supplied screenshots show selections at successive moments; they do not promise a permanently unchanged operator configuration.

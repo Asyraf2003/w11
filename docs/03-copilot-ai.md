@@ -94,9 +94,11 @@ Official-source review: 2026-11-08. `DOCUMENTED` describes Microsoft's or AMD's 
 | Fresh current-user packages | Snipping Tool 11.2608.41.0, Paint 11.2609.401.0, Photos 2026.11090.22001.0, Camera 2025.2505.2.0 | AVAILABLE + CAPTURED applications, not proof of each AI control. Different package scope/version from historical capture is retained rather than explained speculatively. |
 | Fresh AI infrastructure packages | AMD VitisAI framework 1.8.80.0; Client.AIX and Client.CoreAI 1000.26100.9818.0; AIFabric.CBS.1.6 version 1.6.955.100 | AVAILABLE + CAPTURED software components. No model inference or NPU workload was run. |
 | Copilot application identity | MicrosoftOfficeHub 156.0.4314.58 installed; launcher inventory labels its entry Copilot | AVAILABLE + CAPTURED package identity; consumer Copilot, Microsoft 365 entitlement, Vision and Voice availability remain UNKNOWN. |
-| Fresh hardware refresh | CIM/PnP access denied | UNKNOWN current device/driver refresh; this does not invalidate the dated historical hardware evidence. |
+| Initial restricted hardware refresh | CIM/PnP access denied in the first batch | Preserved collection limitation; later successful refresh below supersedes current-state uncertainty. |
+| Subsequent November 8 native refresh | Ryzen AI 7 445 / 6 cores / 12 logical, 16 GiB class RAM, approximately 1 TB SSD; NPU present OK with driver 32.0.203.329; Studio Effects camera and driver present OK | AVAILABLE + CAPTURED current component/hardware evidence; no inference or camera workload run. |
+| Recall servicing state | Optional feature Enabled | AVAILABLE + CAPTURED component state only; snapshot opt-in, saving, history and actual Recall behavior UNKNOWN and uninspected. |
 
-Recall snapshot saving, Hello ESS eligibility, Click to Do actions, semantic search, translation, image generators, feature models and account/region entitlements remain **UNKNOWN on this installation**. No snapshot or conversation data was queried.
+Recall snapshot saving, Hello ESS eligibility, Click to Do actions, semantic search, translation, image generators, feature models and account/region entitlements remain **UNKNOWN on this installation**. No snapshot or conversation data was queried. Current English OCR/speech/TTS/handwriting servicing capabilities are installed; that does not prove a particular app's AI control or language model has executed.
 
 ## Remaining verification
 

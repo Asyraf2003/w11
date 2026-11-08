@@ -17,7 +17,7 @@ The fresh November 8 filtered PnP/driver capture reconfirms the following hardwa
 | Host processing | DolbyAPO SWC **3.30811.890.1**; Dolby HSA components **3.30803.830.0** | DSP/control components installed; no entitlement or active spatial-rendering proof |
 | Host processing | intelliGo APO/service/HSA components **100.1.601.2862** | OEM enhancement infrastructure; algorithm location, current mode and benefit UNKNOWN |
 | Host processing | Voice Clarity PnP component present OK; November 5 driver **1.0.4.7057** | Availability of component; not proof that every microphone application uses it |
-| Application | Dolby Settings **3.31100.346.0** | Current-user package and launcher AVAILABLE; current options await UI evidence |
+| Application | Dolby Settings **3.31100.346.0** | Current-user package and launcher AVAILABLE; preset/effect UI OBSERVED in supplied screenshots below |
 | Application | Dolby Access OEM **3.27.13540.0** | Package AVAILABLE; visible activation/license state UNKNOWN |
 | Application / decoder | Dolby Digital Plus Decoder OEM **1.2.591.0** | Decoder package is distinct from headphone Atmos entitlement and speaker processing |
 | Application | Realtek Audio Control **2.53.391.0** | Current-user package AVAILABLE; exposed jack/EQ options vary by OEM |
@@ -37,7 +37,7 @@ Historical physical topology places the Cirrus amplifier on **I2CB** and the act
 | Atmos content versus ordinary stereo | Spatially authored objects/channel beds can be rendered for the selected output | An Atmos logo or selected preset does not prove source content contains spatial metadata | DOCUMENTED [Spatial Sound][spatial], [Dolby Atmos][atmos] |
 | Windows Sonic for Headphones | Microsoft's platform headphone spatializer | Supported endpoint and explicit selection; separate from Dolby licensing | DOCUMENTED [Spatial Sound][spatial]; current selection UNKNOWN |
 | DTS Headphone:X | Alternative provider in Windows spatial sound | Separate provider/app/license; no installation or entitlement inferred | DOCUMENTED [Spatial Sound][spatial]; machine UNKNOWN |
-| Presets and custom EQ | Tune playback for different material / user preference | Exact preset names, EQ bands and available toggles depend on Dolby Settings/Access version and endpoint | OEM profile structure CAPTURED below; current visible UI UNKNOWN |
+| Presets and custom EQ | Tune playback for different material / user preference | Exact preset names, EQ bands and available toggles depend on Dolby Settings/Access version and endpoint | OEM profile structure CAPTURED; current eight-preset/10-band UI OBSERVED below |
 | Dialogue, leveling and virtualization controls | Possible processing categories in OEM tuning | Configuration entries do not prove an enabled setting, public UI control or audible result | Private structural evidence CAPTURED; runtime state UNKNOWN |
 | OEM software portability | Model-specific tuning accompanies the OEM installation | Dolby directs users to the PC manufacturer for model-specific drivers; installed binaries/tuning are not public redistribution material | DOCUMENTED [Dolby PC support][pcsupport] |
 
@@ -88,7 +88,7 @@ These facts establish that a model-specific processing configuration was capture
 |---|---|---|---|
 | AI Noise-Cancelling Microphone | Reduce unwanted capture-side sound in supported modes | Correct input endpoint, microphone access, mode and app routing; processing location not inferred from NPU presence | DOCUMENTED [MyASUS][myasus]; historical UI AVAILABLE/OBSERVED/CAPTURED |
 | AI Noise-Cancelling Speaker | Suppress nonvoice components on received/playback audio | Intended speech focus can remove music/background content; this alone is not evidence of codec failure | DOCUMENTED [ASUS speaker explanation][asusvoice]; historical UI AVAILABLE/OBSERVED/CAPTURED |
-| Microphone pickup modes | Supported ASUS models can offer single/multiple-presenter, wide/360-degree or other voice modes | Generic menu is not proof of each UM3406GA mode; current menu UNKNOWN | DOCUMENTED [MyASUS][myasus] |
+| Microphone pickup modes | ASUS supports single/multiple-presenter and general recording modes | Current S05 screenshot independently exposes this unit's 360°, Authentic, Single-presenter and Multi-presenter options | DOCUMENTED [MyASUS][myasus]; AVAILABLE/OBSERVED UI/CAPTURED current menu |
 | App noise suppression / echo cancellation | Communications app can add its own processing | Can coexist/interact with OEM processing; no chain order inferred from multiple installed names | DOCUMENTED [audio modes][modes], [APO architecture][apo] |
 | Windows communications category | App tags its stream as communications or another usage category | Driver-defined mode mapping determines supported processing; a media preset is not an application category | DOCUMENTED [audio modes][modes] |
 | Microphone permissions | Control supported capture access | Desktop and packaged apps expose different permission granularity; permission is not an active-recording indicator | DOCUMENTED [Windows audio controls][audio] |
