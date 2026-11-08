@@ -102,6 +102,18 @@ Official-source review: 2026-11-08. `DOCUMENTED` describes Microsoft's or AMD's 
 
 Recall snapshot saving, Hello ESS eligibility, Click to Do actions, semantic search, translation, image generators, feature models and account/region entitlements remain **UNKNOWN on this installation**. No snapshot or conversation data was queried. Current English OCR/speech/TTS/handwriting servicing capabilities are installed; that does not prove a particular app's AI control or language model has executed.
 
+## Linux validation boundary for CPU, GPU and NPU
+
+| Processing path | Preserved Linux route / current result | Evidence and restriction |
+|---|---|---|
+| CPU inference | Ordinary Linux model runtimes can be evaluated independently of Windows AI APIs | No model workload has been run in this lab; availability, output quality and speed remain UNKNOWN |
+| Radeon GPU | Native AMD kernel/Mesa path is a candidate; the WSL lab exposes `/dev/dxg` | OBSERVED device-node presence only. WSL's virtualized graphics path does not prove native Radeon 840M Vulkan/video/inference operation. [Mesa RADV](https://docs.mesa3d.org/drivers/radv.html), [WSLg graphics](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps) |
+| AMD NPU | Linux documents the **amdxdna** kernel driver, signed firmware and XRT userspace path | DOCUMENTED architecture; this lab has no `/dev/accel` path. Exact Ryzen AI 7 445 device/runtime compatibility and an accelerated workload remain UNKNOWN. [Kernel NPU architecture](https://docs.kernel.org/accel/amdxdna/amdnpu.html) |
+| Ryzen AI Linux SDK | The reviewed **1.9.0** instructions cover newer consumer APUs beginning with Strix Point and list Ubuntu **24.04 LTS**, kernel **≥6.10**, Python **3.12.x**, **64 GB RAM recommended** | DOCUMENTED SDK configuration, not a promise for Arch. The lab has Python 3.14.9 and the machine is 16 GiB class; a recommendation is not proof that smaller workloads are unsupported. No SDK/driver was installed. [AMD Linux instructions](https://ryzenai.docs.amd.com/en/latest/linux.html) |
+| Windows AI user experiences | Studio Effects, Recall, Click to Do and semantic Search remain the Windows capability reference | A Linux application with similar behavior needs its own model, integration and test; installing a runtime does not transfer Microsoft/OEM feature models or licensing. No Recall data or Copilot history is copied |
+
+Keep **device enumeration → driver/firmware readiness → supported model/runtime → completed accelerated workload** as separate evidence. The existing reference's unmerged NPU candidate is source material, not deployed or tested support. Paint/Photos AI remains deferred under the agreed scope. Actual lab results are tracked in [Linux validation](09-linux-validation.md).
+
 ## Remaining verification
 
 Reconcile CPU/RAM/NPU/OS build, current-user app versions, model packages and safe feature-setting metadata with the capability-status register. Use existing historical Studio Effects observations where dated. A task-manager NPU graph during a deliberately nonpersonal workload can prove use by that workload; an idle graph cannot prove lack of support. Keep absent packages, permission errors and untested entitlements as `UNKNOWN` unless evidence proves a narrower absence.
