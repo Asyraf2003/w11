@@ -1,6 +1,6 @@
 # Capability evidence and remaining gaps
 
-Reconciled **2026-11-08**. This is the Windows harvesting phase: preserve behavior, interfaces, dependencies and evidence. The later phase that evaluates Linux feasibility **has not started**. No Windows-to-Linux parity claim is made here.
+Reconciled **2026-11-08**. This register preserves Windows behavior, interfaces, dependencies and evidence. Phase 3 has now started in a separate Linux test area; its results are tracked in [Linux validation](09-linux-validation.md). Windows collection statuses below remain distinct from Linux validation results; no Windows-to-Linux parity claim is made here.
 
 Status definitions are in the [README](../README.md). `OBSERVED UI` means the control/selection was seen, not that the physical effect was measured. `UNAVAILABLE` always names its scope: a missing installed component, a disabled state or an explicit supported-hardware restriction is different from an unsupported physical capability.
 
@@ -109,4 +109,4 @@ The MyASUS and Dolby screenshot batch resolved the broad OEM menu gap; follow-up
 
 The public tree is reviewed Markdown and a restrictive ignore file. It contains no screenshots, raw system exports, OEM executables, driver packages, source tuning XML, activation/security fields, device instance paths, serials, UUIDs, addresses, account identities, messages, photos, clipboard contents, Recall snapshots or personal audio/video. Raw evidence and user originals remain local/private. The collector changed no Windows settings, driver, service, registry, firmware or security policy, and made no Frankenstein or reference-repository edits.
 
-Remaining unknowns are explicit evidence limits rather than an invitation to reproduce proprietary processing or assume Linux support. This inventory is useful for a later feasibility session; it does not start that session.
+Remaining unknowns are explicit evidence limits rather than an invitation to reproduce proprietary processing or assume Linux support. The separate validation document now records Linux checks with their own environment and outcome; a Windows observation never becomes a Linux pass merely by being copied.
