@@ -112,6 +112,19 @@ Mirroring sources can intentionally hide protected or app-restricted content. No
 | Quick Share | No matching entry in the narrowly filtered current-user Appx/selected uninstall inventory | UNKNOWN overall installation; this is not an exhaustive all-user/portable-app search |
 | Per-phone eligibility | Official matrices document OEM/Android/app restrictions; no personal device evaluation performed | Personal-phone verification is outside this reference's scope. No messages, photos, clipboard data, contacts or phone identifiers were read |
 
+## Linux continuation: ecosystem functions, separate implementations
+
+These are **DOCUMENTED Linux routes**, not applications installed or successfully paired in the current lab. No personal phone, message, photo, clipboard or account content was opened. The target remains the general Android ecosystem.
+
+| Windows-side behavior to retain | Linux route established by its project | What still needs proof |
+|---|---|---|
+| Files/links, notifications, text-message interaction, media remote and input remote | **KDE Connect** documents these functions across paired devices. [Official feature overview](https://kdeconnect.kde.org/) | Package/app versions, pairing, permissions, network reachability and each selected function; notification/SMS support does not establish cellular call-audio routing |
+| Android screen display/control and supported audio forwarding | **scrcpy** supports Linux with USB or TCP/IP connections; Android **5.0+** for ordinary mirroring/control, **11+** for audio forwarding. [Project requirements](https://github.com/Genymobile/scrcpy#prerequisites) | Authorized ADB connection, device restrictions, codec behavior and latency; no root requirement does not remove USB-debugging authorization |
+| Android camera as a Linux webcam | scrcpy documents camera mirroring on Android **12+** and a Linux **V4L2** output route. [Camera/V4L2 feature documentation](https://github.com/Genymobile/scrcpy#readme) | Suitable Android peer, selected camera, V4L2 sink and application consumption; not proof of Phone Link's Windows camera integration |
+| Calls, Bluetooth profiles, hotspot and wireless casting | Separate transport/desktop implementations must be matched to the behavior described above | UNKNOWN for this Linux target; a working file-transfer or notification tool cannot stand in for call audio, Miracast or hotspot interoperability |
+
+These projects are possible functional replacements, not implementations of Microsoft's account synchronization or Google's Quick Share protocol. Existing private reference candidates for Android transfer/mirroring/casting should be inspected before building replacements; unmerged source is not runtime proof. The WSL lab has not been counted as an Android interoperability pass.
+
 ## Remaining verification gaps
 
 - For a future concrete deployment, compare the chosen Android model/OS/app versions against the linked official matrix. No personal-phone collection is pending for this ecosystem harvest.
