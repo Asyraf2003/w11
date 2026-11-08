@@ -16,13 +16,13 @@ A practical reference of Windows 11 behavior, requirements, interfaces, and ASUS
 
 All seven requested domain families have official-source coverage. The evidence register distinguishes current native results, historical observations, supplied UI evidence and remaining manual gaps. There is no claim of absolute completeness: Windows builds, Store applications, OEM packages, accounts, region and cloud rollouts change the available surface.
 
-Phase 2's Windows reference is preserved here. **Phase 3 started on 2026-11-08:** evaluate software in a separate Linux lab, and reserve physical hardware claims for native Linux. Completed results and pending checks are tracked in the Linux validation document.
+**Windows knowledge-harvest MVP: complete for the agreed priority scope, November 8.** The reference covers all seven major domains, incorporates machine/UI evidence, preserves useful private copies and labels remaining uncertainty. This replaces the earlier rough planning percentages; it does not mean every possible Windows feature is known or every function has been executed. Paint/Photos depth remains deferred. Common shortcuts need documentation and mapping, not individual execution tests.
 
-Progress estimate for the **agreed priority scope**, November 8: Windows harvesting **about 95%**; selective Linux validation **about 15%**. These are planning estimates, not a measured percentage of all Windows features. Paint/Photos depth remains deferred. Common shortcuts need documentation and mapping, not individual execution tests.
+Preliminary Phase 3 software checks were also completed in a separate Arch WSL lab. Their results are preserved in the Linux validation document. Native Linux parity and boot preparation are **deferred to a later migration/implementation task**, not required to finish this knowledge-collection mission.
 
 Verified so far: **64 private evidence files** retain their source hashes when read from Linux; **39 JSON** parse successfully; **18 PNG** signatures pass; the existing audio reconstruction passes **12/12 focused tests** after LF-safe export. Generic ten-band EQ, limiting, loudness normalization and stereo routing also pass controlled software checks. Windows capture, Linux software tests and physical hardware acceptance remain separate evidence classes.
 
-Next priorities are **speaker/amplifier protection and tuning, charging limits, fan/thermal policy, suspend/power, and NPU use for camera effects, local AI and noise cancellation**. Exact Linux driver-table matches exist for the UM3406GA audio subsystem and this NPU revision; native execution is still untested. The removable drive holds private transfer/evidence files, with existing data preserved; bootable-media and Secure Boot constraints remain explicit in the validation record.
+Future Linux priorities are **speaker/amplifier protection and tuning, charging limits, fan/thermal policy, suspend/power, and NPU use for camera effects, local AI and noise cancellation**. Exact Linux driver-table matches exist for the UM3406GA audio subsystem and this NPU revision; native execution is still untested. The removable drive holds private transfer/evidence files, with existing data preserved; bootable-media and Secure Boot constraints remain explicit in the validation record. No native boot is needed to close this MVP.
 
 ## Evidence language
 
