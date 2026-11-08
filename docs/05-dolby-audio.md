@@ -94,6 +94,14 @@ These facts establish that a model-specific processing configuration was capture
 | Microphone permissions | Control supported capture access | Desktop and packaged apps expose different permission granularity; permission is not an active-recording indicator | DOCUMENTED [Windows audio controls][audio] |
 | NPU versus CPU/DSP | Several processors could participate in audio | No workload trace or vendor-specific runtime evidence establishes where this ASUS chain runs | UNKNOWN allocation; no unsupported acceleration claim |
 
+## Linux driver match and reusable software evidence
+
+Linux upstream revision **fa4ad798f6f681031775266044ba1b0cf3c670bd**, inspected November 8, contains an exact **ASUS UM3406GA / subsystem 1043:1584** entry selecting `ALC287_FIXUP_CS35L41_I2C_2`. That fixup calls the two-device I2C component helper. The platform multi-instance table also maps **CSC3551** to the `cs35l41_hda` family. These are **DOCUMENTED + CAPTURED source matches**, not a successful probe on this serviced motherboard. [Exact Realtek quirk](https://github.com/torvalds/linux/blob/fa4ad798f6f681031775266044ba1b0cf3c670bd/sound/hda/codecs/realtek/alc269.c#L8189), [fixup definition](https://github.com/torvalds/linux/blob/fa4ad798f6f681031775266044ba1b0cf3c670bd/sound/hda/codecs/realtek/alc269.c#L6878), [CSC3551 mapping](https://github.com/torvalds/linux/blob/fa4ad798f6f681031775266044ba1b0cf3c670bd/drivers/platform/x86/serial-multi-instantiate.c#L420).
+
+Keep both identities: **Windows reports CS35L51; Linux's matching driver is named cs35l41**. A fixup symbol containing ALC287 does not change the captured ALC294 codec identity. None of these names establishes the silicon's electrical ratings, loaded amplifier firmware, unit calibration, protection state or safe speaker gain. Native read-only probe/firmware evidence must precede physical sound-quality or power claims; do not force an unrelated quirk or copy another model's calibration merely to obtain sound.
+
+The isolated Arch WSL lab has now executed generic **ten-band EQ**, limiting, loudness normalization and exact stereo channel swapping with generated inputs. The existing private speaker-tuning reconstruction passed **12/12 focused tests** after preserving LF bytes during export. These establish software operations and copy integrity; the original failed CRLF-converted copies were retained. Actual native PipeWire/plugin operation, speaker/headphone switching, acoustic matching, amplifier protection and licensed Atmos remain separate. Measured results and the safe export command are in [Linux validation](09-linux-validation.md).
+
 ## Windows APIs and processing architecture
 
 | Interface / layer | Useful capability | Limits / requirements | Evidence |
