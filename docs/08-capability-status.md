@@ -1,6 +1,6 @@
 # Capability evidence and remaining gaps
 
-Reconciled **2026-11-08**. This register preserves Windows behavior, interfaces, dependencies and evidence. Phase 3 has now started in a separate Linux test area; its results are tracked in [Linux validation](09-linux-validation.md). Windows collection statuses below remain distinct from Linux validation results; no Windows-to-Linux parity claim is made here.
+Reconciled **2026-11-08**. **Windows knowledge-harvest MVP: complete for the agreed scope.** All seven major domain families have official-source coverage, available machine evidence is incorporated, useful private copies are preserved and remaining gaps are explicit. This is not a claim that every possible Windows feature has been enumerated or exercised. Preliminary software results are retained in [Linux validation](09-linux-validation.md); native Linux parity belongs to a later task and is not a completion requirement for this harvest.
 
 Status definitions are in the [README](../README.md). `OBSERVED UI` means the control/selection was seen, not that the physical effect was measured. `UNAVAILABLE` always names its scope: a missing installed component, a disabled state or an explicit supported-hardware restriction is different from an unsupported physical capability.
 
@@ -107,7 +107,7 @@ Full component details are in their domain chapters. Current-user Appx inventory
 
 The MyASUS and Dolby screenshot batch resolved the broad OEM menu gap; follow-up screenshots resolved current Studio Effects and Snipping start-surface exposure. The user explicitly deferred deeper Paint/Photos AI inspection, chose general ASUS/UM3406 keyboard references, and scoped Android coverage to the ecosystem rather than a personal phone. No further physical-keyboard or personal-phone collection is pending for this pass. Remaining Windows gaps do not block the agreed selective Linux validation.
 
-Linux validation prioritizes **audio/amplifier protection, charging, fan/thermal policy, suspend/power and NPU-backed AI goals**. Common shortcuts need documentation/mapping rather than individual runtime tests. Generic DSP and preservation checks are complete; actual native hardware remains untested. The [validation record](09-linux-validation.md) owns results, boot constraints and the remaining checks.
+Future Linux validation prioritizes **audio/amplifier protection, charging, fan/thermal policy, suspend/power and NPU-backed AI goals**. Common shortcuts need documentation/mapping rather than individual runtime tests. Generic DSP and preservation checks are complete; actual native hardware remains untested. These follow-up gaps do not hold the Windows harvest MVP open. The [validation record](09-linux-validation.md) owns results, boot constraints and deferred checks.
 
 ## Privacy and collection boundary
 
