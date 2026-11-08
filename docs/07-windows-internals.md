@@ -111,6 +111,23 @@ Every table entry below is `DOCUMENTED`; applicability or active use on this UM3
 | Windows Shell namespace | Explorer represents files and virtual objects such as libraries, Recycle Bin and Control Panel through shell interfaces. Apps can integrate file dialogs, views, handlers and notifications. | A shell item need not correspond to a filesystem path. Extension registration does not prove a handler works in every app or architecture. | [Windows Shell](https://learn.microsoft.com/en-us/windows/win32/shell/shell-entry) |
 | PowerToys ecosystem | Optional Microsoft utilities extend window layouts, preview handlers, file-use inspection and other workflows. | Separately installed/updateable software, not a baseline Windows feature. Inspect actual installed modules before reporting any utility `AVAILABLE`. | [PowerToys catalog](https://learn.microsoft.com/en-us/windows/powertoys/) |
 
+## Optional PowerToys capability families
+
+Microsoft's [current utility catalog](https://learn.microsoft.com/en-us/windows/powertoys/) and [official repository](https://github.com/microsoft/PowerToys) describe these separately installed tools. All entries are **DOCUMENTED**; actual installation/enabled state on this machine is **UNKNOWN**. Do not relabel their shortcuts or behavior as stock Windows, and do not enable a module merely to fill the catalog.
+
+| Utility family | Capability worth preserving | Dependency / scope boundary |
+|---|---|---|
+| FancyZones / Always On Top | Custom window zones / pin a window above others | Separate from built-in Snap; app/admin restrictions apply |
+| Command Palette / PowerToys Run | Launch/search/command surfaces and extensions | Index/plugin scope differs from Windows Search and semantic search |
+| Keyboard Manager / Mouse utilities | Remap supported keys/shortcuts; pointer-finding/highlighting and related assistance | User-level tool constraints; not firmware Fn mapping or secure-desktop remapping |
+| Advanced Paste / Text Extractor | Clipboard format transformations / OCR from a selected screen region | Optional AI transformations can require a configured provider and send chosen content; no clipboard or credentials inspected |
+| Color Picker / Screen Ruler | Sample screen colors / measure screen geometry | Captured rendered values are not calibrated panel measurements |
+| PowerRename / Image Resizer | Batch renaming / image-size operations | File mutation utilities; documented only, not executed |
+| File Explorer add-ons / Peek | Additional previews and file-viewing surfaces | Supported formats/handlers; not universal file interpretation |
+| File Locksmith | Inspect processes using selected files | Visibility and elevation constrain results; no file handles closed |
+| Awake / Crop And Lock / Workspaces | Temporary awake policy, cropped app views and saved application layouts | Optional behavior; no sleep policy or app arrangement was changed |
+| Environment Variables / Hosts editor / Registry Preview | Editors/previews for developer configuration surfaces | These can alter system configuration if applied; only their documented capability is preserved here |
+
 ## Lifecycle and inference boundaries worth preserving
 
 | Topic | Preserved distinction | Evidence |

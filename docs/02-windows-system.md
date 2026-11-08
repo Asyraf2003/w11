@@ -151,6 +151,25 @@ The category denominator here is the standard Settings Home plus **11 major cate
 | Developer surfaces | Developer Mode, terminal, device discovery and developer settings | Some options moved to System > Advanced in newer builds; no development settings enabled | [URI catalog][uris] |
 | Virtualization / WSL / Sandbox | Linux environment and isolated Windows workloads | CPU/firmware/edition/feature dependencies; see internals | [Internals](07-windows-internals.md) |
 
+## Built-in apps and separately serviced Microsoft utilities
+
+Store apps, optional Windows features and Win32 programs have independent lifecycles. A capability can remain installed while its app, model or entitlement is missing. The actual versions below come from the **November 8 current-user package capture**, not from opening user content.
+
+| Application / utility | Preserved behavior and conditions | Actual evidence / boundary |
+|---|---|---|
+| Clock Focus sessions | Timer/break sessions integrated with Windows Focus; can be started from Clock, Settings or notification/calendar area | DOCUMENTED [Focus guide][clock]; WindowsAlarms **1.1.158.0** AVAILABLE/CAPTURED; session not started |
+| Calculator | Standard/scientific/programmer/graphing/date modes, history, memory and supported conversions | DOCUMENTED [Microsoft Calculator source/test reference][calc]; **11.2607.0.0** AVAILABLE/CAPTURED; no current conversion rate or mathematical workload claimed |
+| Sound Recorder | Record/pause/save audio while other apps run; microphone/format/app support governs capture | DOCUMENTED [Recorder guide][soundrecorder]; **1.1.127.0** AVAILABLE/CAPTURED; no audio captured |
+| Camera | Photo/video, supported QR/barcode/document/whiteboard scanning and framing/quality settings | DOCUMENTED [Camera guide][cameraapp]; **2025.2505.2.0** AVAILABLE/CAPTURED; current FHD/IR devices do not prove every scanning mode or app access to IR |
+| Snipping Tool | Region/window/fullscreen captures, supported screen recording, markup and text actions | DOCUMENTED [Snipping guide][snippingapp]; **11.2608.41.0**, start UI OBSERVED; OCR/recording not exercised |
+| Quick Assist | Consent-based screen assistance with separate helper identity/session controls | DOCUMENTED [Microsoft Quick Assist][quickassist]; **2.0.35.0** AVAILABLE/CAPTURED; no session, screen sharing or access grant initiated |
+| Game Bar | Overlay, performance/game widgets and supported app/game capture | DOCUMENTED [shortcut reference](01-shortcuts.md); **7.326.10141.0** AVAILABLE/CAPTURED; no game/capture session opened |
+| Microsoft Store / App Installer | Separately serviced software catalog and package deployment/WinGet entry point | DOCUMENTED [WinGet][winget]; Store **22609.1401.12.0**, DesktopAppInstaller **1.29.379.0** AVAILABLE/CAPTURED; no installs/source changes performed |
+| Power Automate Desktop | Record/design attended UI automation and file/web/application workflows | DOCUMENTED [desktop flows][desktopflows]; package **1.0.2159.0** AVAILABLE/CAPTURED; account, premium/cloud/unattended licensing and usable desktop product version require separate evidence; flows were not read or executed |
+| Windows Terminal | Tabs, split panes, profiles, command palette and GPU-rendered terminal surface | DOCUMENTED [Terminal][terminalapp]; **1.24.12741.0** AVAILABLE/CAPTURED; distinct from the shell, WSL distro and Windows developer mode |
+| Classic Windows Media Player | Optional media playback library/player feature | MediaPlayback/WindowsMediaPlayer Enabled in servicing capture; this does not establish presence of the separately serviced modern Media Player app or every codec |
+| PowerToys | Optional Microsoft collection extending window, input, search, clipboard and file workflows | DOCUMENTED [PowerToys][powertoys]; overall installation/active modules UNKNOWN; not baseline Windows behavior. See internals for module families. |
+
 ## Machine evidence and important drift
 
 The **2026-11-05** private differential capture records Windows 11 **Home Single Language, build 26200**, Ryzen AI 7 445 (6 cores/12 threads), 16 GiB physical memory class, Radeon 840M and a roughly 1 TB Samsung NVMe SSD: **AVAILABLE + CAPTURED historically**, current refresh **UNKNOWN** where collection is denied.
@@ -190,3 +209,13 @@ Historical Quick Settings observations include Wi-Fi, Bluetooth, airplane mode, 
 [hello]: https://support.microsoft.com/en-us/windows/security/windows-security/windows-security-app-overview
 [archives]: https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/zip-and-unzip-files
 [gestures]: https://support.microsoft.com/en-us/windows/hardware/input-devices/touch-gestures-for-windows
+[clock]: https://support.microsoft.com/en-us/windows/experience/focus-stay-on-task-without-distractions-in-windows
+[calc]: https://github.com/microsoft/calculator/blob/main/docs/ManualTests.md
+[soundrecorder]: https://support.microsoft.com/en-us/windows/apps/sound-recorder-app-for-windows-faq
+[cameraapp]: https://support.microsoft.com/en-us/windows/hardware/camera/how-to-use-the-windows-camera-app
+[snippingapp]: https://support.microsoft.com/en-us/windows/apps/use-snipping-tool-to-capture-screenshots
+[quickassist]: https://learn.microsoft.com/en-us/windows/client-management/client-tools/quick-assist
+[desktopflows]: https://learn.microsoft.com/power-automate/desktop-flows/overview
+[winget]: https://learn.microsoft.com/en-us/windows/package-manager/winget/
+[terminalapp]: https://learn.microsoft.com/en-us/windows/terminal/
+[powertoys]: https://learn.microsoft.com/en-us/windows/powertoys/

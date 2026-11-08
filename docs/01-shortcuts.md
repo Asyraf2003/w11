@@ -239,6 +239,39 @@ These defaults belong to applications; they are not universal global bindings. A
 | Ctrl+C | Interrupt/copy | Interrupt command or copy selection | Console selection and shell context | [MS][windows] |
 | Ctrl+Home / End | Console buffer | Buffer/history navigation | Mark mode and command text affect behavior | [MS][windows] |
 
+## Additional application, magnification and remote-session contexts
+
+These are **DOCUMENTED** application defaults, current execution **UNKNOWN**. Magnifier reading uses a configurable modifier, **Ctrl+Alt by default**. RDP bindings apply inside the Microsoft Remote Desktop Connection client; keyboard redirection can send ordinary shortcuts to the local or remote machine, and nested/RemoteApp sessions have restrictions.
+
+| Shortcut | Action | Behavior | Conditions | Source |
+|---|---|---|---|---|
+| Ctrl+Alt+wheel | Magnifier zoom | Adjust magnification | Magnifier active | [MS][magnifier] |
+| Ctrl+Alt+F / L / D | Magnifier view | Fullscreen / lens / docked | Magnifier active | [MS][magnifier] |
+| Ctrl+Alt+M | Magnifier view cycle | Cycle presentation modes | Magnifier active | [MS][magnifier] |
+| Ctrl+Alt+Arrow | Magnifier pan | Move viewport | Magnifier active | [MS][magnifier] |
+| Ctrl+Alt+Space | Magnifier overview | Peek entire desktop while held | Fullscreen Magnifier | [MS][magnifier] |
+| Ctrl+Alt+minus | Magnifier toggle | Configured zoom / 1× | Magnifier active | [MS][magnifier] |
+| Ctrl+Alt+I | Magnifier colors | Toggle inversion | Magnifier active; distinct from system color filters | [MS][magnifier] |
+| Reading modifier+Enter | Magnifier reading | Start/pause/resume speech | Modifier configurable | [MS][magnifier] |
+| Reading modifier+left-click | Magnifier reading | Read from pointed text | Modifier configurable | [MS][magnifier] |
+| Reading modifier+H / K | Reading navigation | Previous / next sentence | Magnifier reading | [MS][magnifier] |
+| Win+Ctrl+M | Magnifier settings | Open configuration | Shell | [MS][magnifier] |
+| Ctrl+Win+K | Magnifier viewport lock | Lock/unlock pointed display | Newer independent-display mode; not Cast's Win+K | [MS][magnifier] |
+| Alt+M / Alt+N | Snipping mode/new | Choose mode / repeat prior mode | Snipping Tool focused; menu/version dependent | [MS][snipping] |
+| Alt+D | Snipping delay | Select delayed capture | Snipping Tool focused; delay choices vary by app generation | [MS][snipping] |
+| Shift+Arrow | Snipping selection | Keyboard-adjust capture selection | Active snipping selection | [MS][snipping] |
+| Ctrl+C / Ctrl+S | Snipping result | Copy / save capture | Captured snip open | [MS][snipping] |
+| Ctrl+R / Space / Esc | Sound Recorder | Record / pause-resume / stop-save | Recorder focused; no recording performed here | [MS][recorder] |
+| Ctrl+Alt+Home | RDP connection bar | Focus client bar | Remote Desktop Connection | [MS][rdpkeys] |
+| Ctrl+Alt+Break | RDP fullscreen | Toggle fullscreen/window | Break may need OEM equivalent | [MS][rdpkeys] |
+| Ctrl+Alt+End | Remote security screen | Remote equivalent of Ctrl+Alt+Delete | Active RDP session; not sent to physical local secure desktop | [MS][rdpkeys] |
+| Alt+Page Up / Page Down | Remote app switch | Forward / backward | RDP alternate keyboard mappings | [MS][rdpkeys] |
+| Alt+Insert | Remote window cycle | Open-order cycling | RDP context | [MS][rdpkeys] |
+| Alt+Home / Alt+Delete | Remote Start/menu | Start / window system menu | RDP context | [MS][rdpkeys] |
+| Ctrl+Alt+numpad minus / plus | Remote screenshot | Active window / entire client area | RDP context; clipboard redirection/policy applies | [MS][rdpkeys] |
+
+For the much larger screen-reader-specific command set, keep Microsoft's [Narrator command appendix][narrator] as the canonical extended inventory rather than treating ordinary desktop keys as all accessibility interaction.
+
 ## ASUS Fn and NumberPad boundary
 
 | Shortcut/interaction | Action | Behavior | Conditions | Source |
@@ -267,3 +300,8 @@ The November 8 MyASUS screenshots show **Locked Fn key / hotkey-first** selected
 [aikeys]: https://support.microsoft.com/en-us/windows/ai/ai-features/keyboard-shortcuts-for-recall-and-click-to-do
 [calculator]: https://github.com/microsoft/calculator/blob/main/docs/ManualTests.md
 [wsr]: https://support.microsoft.com/en-us/windows/use-voice-recognition-in-windows-83ff75bd-63eb-0b6c-18d4-6fae94050571
+[magnifier]: https://support.microsoft.com/en-us/accessibility/windows/magnifier/keyboard-shortcuts-for-magnifier
+[snipping]: https://support.microsoft.com/en-us/windows/apps/use-snipping-tool-to-capture-screenshots
+[recorder]: https://support.microsoft.com/en-us/windows/apps/sound-recorder-app-for-windows-faq
+[rdpkeys]: https://learn.microsoft.com/en-us/windows/win32/termserv/terminal-services-shortcut-keys
+[narrator]: https://support.microsoft.com/en-us/accessibility/windows/narrator/appendix-b-narrator-keyboard-commands-and-touch-gestures
