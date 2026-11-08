@@ -7,6 +7,7 @@ A practical reference of Windows 11 behavior, requirements, interfaces, and ASUS
 - [Keyboard shortcuts, mouse, touchpad and touch](docs/01-shortcuts.md)
 - [Windows Settings, shell and system behavior](docs/02-windows-system.md)
 - [Copilot, Windows AI and processing boundaries](docs/03-copilot-ai.md)
+- [ASUS Zenbook, MyASUS, OLED and input](docs/04-asus-myasus.md)
 
 Additional completed domains are added incrementally. There is no claim of absolute completeness: Windows builds, Store applications, OEM packages, accounts, region and cloud rollouts change the available surface.
 
