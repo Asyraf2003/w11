@@ -26,7 +26,9 @@ This batch has **three checks**, rather than a percentage of every Windows capab
 2. A synthetic tone processed by a real Linux equalizer, checking the expected gain.
 3. A synthetic limiter test, checking that the output peak stays at the selected threshold.
 
-Initial discovery: WSL **3.0.3.0**, WSLg **1.0.79**, an existing running Ubuntu 24.04 WSL2 distribution, and the official `archlinux` entry in the WSL online catalog. A named fresh Arch lab installation was started; completed isolation and audio test results are **PENDING**, not counted as passes. [Arch's official image distribution](https://archlinux.org/download/), [WSL install controls](https://learn.microsoft.com/en-us/windows/wsl/basic-commands).
+Initial discovery: WSL **3.0.3.0**, WSLg **1.0.79**, an existing running Ubuntu 24.04 WSL2 distribution, and the official `archlinux` entry in the WSL online catalog. [Arch's official image distribution](https://archlinux.org/download/), [WSL install controls](https://learn.microsoft.com/en-us/windows/wsl/basic-commands).
+
+**Progress: 1/3 checks completed.** A fresh **W11-Lab-Arch** WSL2 distribution is installed on its own virtual disk and has successfully executed Arch's shell, `/etc/os-release` and `pacman`. The existing Ubuntu distribution remains the default. The lab reports kernel **6.18.54.1-microsoft-standard-WSL2**. This is a separate test filesystem, not a claim of security isolation from the Windows host. EQ and limiter tests remain PENDING while the lab's audio package installation runs.
 
 Audio processing uses generated signals and file/null output. It will not play through the laptop speakers, use private media or copy proprietary Dolby tuning. Passing EQ/limiting checks can establish generic DSP building blocks; it cannot establish licensed Dolby Atmos reproduction, smart-amplifier protection or safe physical speaker gain. [FFmpeg filter contracts](https://ffmpeg.org/ffmpeg-filters.html).
 
