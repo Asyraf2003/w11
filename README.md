@@ -18,6 +18,12 @@ All seven requested domain families have official-source coverage. The evidence 
 
 Phase 2's Windows reference is preserved here. **Phase 3 started on 2026-11-08:** evaluate software in a separate Linux lab, and reserve physical hardware claims for native Linux. Completed results and pending checks are tracked in the Linux validation document.
 
+Progress estimate for the **agreed priority scope**, November 8: Windows harvesting **about 95%**; selective Linux validation **about 15%**. These are planning estimates, not a measured percentage of all Windows features. Paint/Photos depth remains deferred. Common shortcuts need documentation and mapping, not individual execution tests.
+
+Verified so far: **64 private evidence files** retain their source hashes when read from Linux; **39 JSON** parse successfully; **18 PNG** signatures pass; the existing audio reconstruction passes **12/12 focused tests** after LF-safe export. Generic ten-band EQ, limiting, loudness normalization and stereo routing also pass controlled software checks. Windows capture, Linux software tests and physical hardware acceptance remain separate evidence classes.
+
+Next priorities are **speaker/amplifier protection and tuning, charging limits, fan/thermal policy, suspend/power, and NPU use for camera effects, local AI and noise cancellation**. Exact Linux driver-table matches exist for the UM3406GA audio subsystem and this NPU revision; native execution is still untested. The removable drive holds private transfer/evidence files, with existing data preserved; bootable-media and Secure Boot constraints remain explicit in the validation record.
+
 ## Evidence language
 
 | Status | Meaning |
