@@ -32,6 +32,8 @@ Every domain points to its numbered reference document. Sources were researched 
 | User screenshots | November 8 session, **16 initial frames S03–S18** | Visually reviewed originals; private filename/size/timestamp/SHA-256 manifest. File timestamps are not independent proof of when a screen was captured. Selected states are frame-specific. |
 | User screenshot follow-up | November 8, **2 further frames S19–S20**; **18 total** | Current Studio Effects and Snipping start UI. Separate private provenance manifest; personal camera preview/desktop transcript not republished. |
 | Official documentation | Reviewed November 8; direct URLs in domain chapters | DOCUMENTED functionality and requirements, paraphrased. Does not prove installation or successful operation. |
+| Linux copy/read check | November 8, private removable-drive preservation folder | **64/64 source-file hashes and lengths match** when read from Arch WSL; **39 JSON** parsed and **18 PNG** signatures checked. This verifies preservation/readability, not Windows/Linux feature parity. |
+| Focused NPU hardware-ID supplement | November 8, read-only ComputeAccelerator hardware-ID query | Exact **1022:17f0 revision 20** captured; original and removable-drive copy hashed. Pinned upstream device/revision match is documented in the AI chapter; no accelerator workload run. |
 
 The initial batch's errors are historical collection results, not current unsupported-feature conclusions. The later successful refresh resolves those collection gaps; both records remain preserved.
 
@@ -41,7 +43,7 @@ The initial batch's errors are historical collection results, not current unsupp
 |---|---|---|---|
 | Windows release | Registry **26H2 / 26300.9818**, CIM Windows 11 Home Single Language build 26300, WSL host-version corroboration | AVAILABLE, OBSERVED metadata, CAPTURED | Earlier November 5 build 26200 is historical; legacy ProductName Windows 10/2009 fields are not the current OS identity |
 | CPU/memory | Ryzen AI 7 445, **6 cores / 12 logical**, **16 GiB class** physical memory; fresh CIM | AVAILABLE, CAPTURED | Exact reported physical total is below nominal 16 GiB due to platform reservation; no benchmark |
-| NPU | AMD NPU Compute Accelerator present OK; driver **32.0.203.329** | AVAILABLE, CAPTURED | AMD documents up to **50 NPU TOPS**; capability is not proof of workload acceleration or every Copilot+ feature |
+| NPU | Compute Accelerator present OK; driver **32.0.203.329**; hardware **AMD 1022:17f0 rev 20** | AVAILABLE, CAPTURED; DOCUMENTED exact Linux driver-table match | AMD documents up to **50 NPU TOPS**; Linux runtime/model execution and per-app NPU use remain UNKNOWN. Camera effects, local AI and noise cancellation are explicit validation priorities |
 | Graphics/display | Radeon 840M **32.0.22042.11003**; current **1920×1200, 60 Hz**; active brightness provider | AVAILABLE, OBSERVED metadata, CAPTURED | Not maximum supported mode, HDR verification, color accuracy or flicker measurement |
 | BIOS | **UM3406GA.305** | AVAILABLE, CAPTURED | No firmware image, UEFI variables or unique identity data published |
 | Storage | Samsung NVMe approximately **1 TB**, high-level Healthy | AVAILABLE, CAPTURED | No endurance/SMART or restoration test |
@@ -103,7 +105,9 @@ Full component details are in their domain chapters. Current-user Appx inventory
 | Dolby entitlement | Activation information shown without account identity; selected endpoint/spatial-provider list | Distinguish OEM effects from separate headphone or home-theater entitlement |
 | Physical behavior | Deliberate future battery/fan/ALS/OLED/audio/camera/dock/sleep checks only where useful | Actual measured behavior under stated conditions; a different evidence class from UI presence |
 
-The MyASUS and Dolby screenshot batch resolved the broad OEM menu gap; follow-up screenshots resolved current Studio Effects and Snipping start-surface exposure. The user explicitly deferred deeper Paint/Photos AI inspection, chose general ASUS/UM3406 keyboard references, and scoped Android coverage to the ecosystem rather than a personal phone. No further physical-keyboard or personal-phone collection is pending for this pass. Remaining functional gaps are retained without blocking another capability family or beginning Linux work.
+The MyASUS and Dolby screenshot batch resolved the broad OEM menu gap; follow-up screenshots resolved current Studio Effects and Snipping start-surface exposure. The user explicitly deferred deeper Paint/Photos AI inspection, chose general ASUS/UM3406 keyboard references, and scoped Android coverage to the ecosystem rather than a personal phone. No further physical-keyboard or personal-phone collection is pending for this pass. Remaining Windows gaps do not block the agreed selective Linux validation.
+
+Linux validation prioritizes **audio/amplifier protection, charging, fan/thermal policy, suspend/power and NPU-backed AI goals**. Common shortcuts need documentation/mapping rather than individual runtime tests. Generic DSP and preservation checks are complete; actual native hardware remains untested. The [validation record](09-linux-validation.md) owns results, boot constraints and the remaining checks.
 
 ## Privacy and collection boundary
 
