@@ -12,10 +12,11 @@ A practical reference of Windows 11 behavior, requirements, interfaces, and ASUS
 - [Windows and Android integration](docs/06-android-integration.md)
 - [Advanced Windows interfaces and internals](docs/07-windows-internals.md)
 - [Evidence register, coverage and remaining manual gaps](docs/08-capability-status.md)
+- [Linux validation: WSL results and native-hardware limits](docs/09-linux-validation.md)
 
 All seven requested domain families have official-source coverage. The evidence register distinguishes current native results, historical observations, supplied UI evidence and remaining manual gaps. There is no claim of absolute completeness: Windows builds, Store applications, OEM packages, accounts, region and cloud rollouts change the available surface.
 
-This is **phase 2: Windows knowledge collection and preservation**. Phase 3, evaluating feasibility on Linux, has not started.
+Phase 2's Windows reference is preserved here. **Phase 3 started on 2026-11-08:** evaluate software in a separate Linux lab, and reserve physical hardware claims for native Linux. Completed results and pending checks are tracked in the Linux validation document.
 
 ## Evidence language
 
