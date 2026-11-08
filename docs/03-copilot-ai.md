@@ -97,6 +97,8 @@ Official-source review: 2026-11-08. `DOCUMENTED` describes Microsoft's or AMD's 
 | Initial restricted hardware refresh | CIM/PnP access denied in the first batch | Preserved collection limitation; later successful refresh below supersedes current-state uncertainty. |
 | Subsequent November 8 native refresh | Ryzen AI 7 445 / 6 cores / 12 logical, 16 GiB class RAM, approximately 1 TB SSD; NPU present OK with driver 32.0.203.329; Studio Effects camera and driver present OK | AVAILABLE + CAPTURED current component/hardware evidence; no inference or camera workload run. |
 | Recall servicing state | Optional feature Enabled | AVAILABLE + CAPTURED component state only; snapshot opt-in, saving, history and actual Recall behavior UNKNOWN and uninspected. |
+| User screenshot S19, reviewed November 8 | Quick Settings Studio Effects exposes **Portrait Blur, Standard Blur, Eye Contact: Standard, Automatic framing**, with a camera preview and a More Camera effects settings entry | AVAILABLE + OBSERVED UI + CAPTURED current controls. No app is reported using the camera in that frame. Effect activation/quality/acceleration not tested; no personal preview image is published. |
+| User screenshot S20, reviewed November 8 | Snipping Tool blank start surface exposes New, screenshot/video controls and the **Win+Shift+S** prompt | AVAILABLE + OBSERVED UI + CAPTURED capture controls. No edited capture was supplied, so OCR, redaction and Perfect Screenshot execution remain UNKNOWN. |
 
 Recall snapshot saving, Hello ESS eligibility, Click to Do actions, semantic search, translation, image generators, feature models and account/region entitlements remain **UNKNOWN on this installation**. No snapshot or conversation data was queried. Current English OCR/speech/TTS/handwriting servicing capabilities are installed; that does not prove a particular app's AI control or language model has executed.
 
@@ -104,6 +106,8 @@ Recall snapshot saving, Hello ESS eligibility, Click to Do actions, semantic sea
 
 Reconcile CPU/RAM/NPU/OS build, current-user app versions, model packages and safe feature-setting metadata with the capability-status register. Use existing historical Studio Effects observations where dated. A task-manager NPU graph during a deliberately nonpersonal workload can prove use by that workload; an idle graph cannot prove lack of support. Keep absent packages, permission errors and untested entitlements as `UNKNOWN` unless evidence proves a narrower absence.
 
-Manual verification, if needed, can use one batch of nonpersonal screens: Copilot shortcut/settings and signed-out availability; Windows camera effect menu; Captions language menu; Paint/Photos/Snipping toolbars. Do not open Recall history, chats, recent personal files or activate recording for this purpose.
+The user supplied current Studio Effects and Snipping start-surface screenshots. Further verification of **Paint and Photos AI menus/models is explicitly deferred to later development**, per the user's November 8 direction; the official capability reference remains useful without testing those applications now. This is a deferral, not a finding of unavailable hardware or proven Linux equivalence.
+
+Other optional UI gaps are Copilot key/settings and Voice/Vision entry points, Captions language choices and Snipping OCR actions on a nonpersonal image. Do not open Recall history, chats or recent personal files, or activate recording merely to fill the inventory.
 
 Cloud features, subscriptions, region support, model deployment and Microsoft branding change independently of Windows build. This catalog records the reviewed official guidance, not permanent entitlement or absolute feature completeness.

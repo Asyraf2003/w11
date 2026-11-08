@@ -12,7 +12,7 @@ The defined domain denominator is the user's **seven requested families**, not e
 |---|---|---|---|
 | A. Shortcuts/interactions | Shell, editing, dialogs, Explorer, taskbar, Snap/desktops, capture, accessibility, gestures, app contexts and OEM keys | Historical input topology; current MyASUS Fn/NumberPad UI | Full physical function-row map; legacy Paint/Notepad source verification; most chords not exercised |
 | B. Windows system | Settings Home plus 11 main categories, shell, accounts, security, recovery, storage, gaming and developer surfaces | Current OS, power states, security, hardware and servicing inventory | Per-setting values outside supplied UI; physical peripherals/recovery behavior |
-| C. Copilot/AI | Copilot app/Voice/Vision, Recall, Click to Do, semantic search, Studio Effects, captions, Paint/Photos/OCR and processing boundaries | NPU/Studio Effects components and current AI packages; historical effects UI; Recall component Enabled | Current per-app AI menus, models, entitlement, region/language and actual workloads |
+| C. Copilot/AI | Copilot app/Voice/Vision, Recall, Click to Do, semantic search, Studio Effects, captions, Paint/Photos/OCR and processing boundaries | NPU/current AI packages; fresh Studio Effects and Snipping UI; Recall component Enabled | Per-app models, entitlement, region/language and actual workloads; Paint/Photos deeper checks explicitly deferred |
 | D. ASUS/OEM | Battery/fans/power, OLED/color, keyboard/NumberPad, audio, QoS, diagnostics/update, GlideX/ScreenXpert | Current driver/services/packages and user MyASUS screenshot sequence | Submenus not expanded; optical/acoustic/thermal/charging behavior |
 | E. Dolby/audio | Hardware/driver/APO/DSP/app layers, presets/EQ, spatial sound, voice and APIs | Current component versions; Dolby UI with eight presets, 10-band EQ and effects On | Separate headphone/HDMI entitlement and actual rendering/audio-quality measurements |
 | F. Android | Phone Link, camera, notifications/messages/calls, clipboard/files/apps, hotspot, Quick Share, Bluetooth, USB/ADB and casting | Current Phone Link/cross-device/GlideX packages, radio interfaces and receiver installation state | Phone model/OS/permissions and selected-device eligibility; synthetic transfer/mirror test |
@@ -30,6 +30,7 @@ Every domain points to its numbered reference document. Sources were researched 
 | Unrestricted refresh | November 8, **13 additional query groups**, after user opened session permissions | Refreshed denied/null hardware, PnP/drivers/tasks/servicing/security/storage queries plus selected Win32 registration, radio and WinRE metadata. Original restricted captures unchanged. No Windows permission/security policy was changed. |
 | Enumeration decoder | November 8, installed DISM module enum reflection | Captured mapping of capability/optional-feature numeric states to names, with supplemental hash; avoids guessing what serialized enum integers mean. |
 | User screenshots | November 8 session, **16 initial frames S03–S18** | Visually reviewed originals; private filename/size/timestamp/SHA-256 manifest. File timestamps are not independent proof of when a screen was captured. Selected states are frame-specific. |
+| User screenshot follow-up | November 8, **2 further frames S19–S20**; **18 total** | Current Studio Effects and Snipping start UI. Separate private provenance manifest; personal camera preview/desktop transcript not republished. |
 | Official documentation | Reviewed November 8; direct URLs in domain chapters | DOCUMENTED functionality and requirements, paraphrased. Does not prove installation or successful operation. |
 
 The initial batch's errors are historical collection results, not current unsupported-feature conclusions. The later successful refresh resolves those collection gaps; both records remain preserved.
@@ -52,7 +53,7 @@ The initial batch's errors are historical collection results, not current unsupp
 | Hibernate/Fast Startup | Reported available | AVAILABLE, CAPTURED | Successful cycle not tested |
 | S1/S2/S3 / Hybrid Sleep | Reported unavailable in current configuration | UNAVAILABLE in captured sleep-state report, CAPTURED | Reasons include firmware/S0/Device Guard/hypervisor constraints; no settings changed |
 | RGB / IR camera | FHD and IR UVC devices present OK; Hello Face capability Installed | AVAILABLE, CAPTURED | Hello enrollment, ESS/anti-spoof quality and authentication not tested |
-| Studio Effects | Camera and driver present OK; earlier UI exposed framing, eye contact, standard/portrait blur | AVAILABLE, CAPTURED; historical OBSERVED UI | Current options/actual effect execution still separate |
+| Studio Effects | Camera and driver present OK; fresh S19 exposes framing, Standard eye contact and standard/portrait blur | AVAILABLE, OBSERVED UI, CAPTURED current controls | Actual effect execution, quality and workload acceleration separate |
 | USB4 | Host/router/root and power-coordination nodes present OK | AVAILABLE, CAPTURED | Dock, external display, eGPU, PD and maximum throughput untested |
 | Wi-Fi | MT7922/RZ616 **3.5.2.1383**; 2.4/5/6 GHz and 802.11ax advertised | AVAILABLE, CAPTURED | Regional/AP/connection restrictions apply; no SSIDs, addresses, profiles or keys published |
 | Wi-Fi Direct | Device/GO/client and 5 GHz GO supported; 6 GHz GO not supported in report | AVAILABLE / UNAVAILABLE advertised roles as stated, CAPTURED | An advertised role is not successful peer connectivity |
@@ -93,7 +94,8 @@ Full component details are in their domain chapters. Current-user Appx inventory
 
 | Gap | Minimum useful evidence | What it would establish |
 |---|---|---|
-| Current AI controls | User screenshots/readout of Studio Effects, Paint blank-canvas AI menu, Snipping toolbar and Photos edit controls on a stock wallpaper | Exposed controls; still not model execution or entitlement beyond displayed labels |
+| Remaining AI controls | Captions language menu, nonpersonal Snipping text-action controls and feature model metadata if a future decision needs them | Studio Effects and Snipping start controls already OBSERVED; model execution and entitlement remain separate |
+| Deferred Paint/Photos depth | No further collection required in this pass, per explicit user direction; retain official descriptions and requirements | Deferred to later development, not UNAVAILABLE and not a Linux-equivalence claim |
 | Copilot entitlement/keys | Nonpersonal settings/readout of key target and available Voice/Vision entry points, omitting chats/account identity | Current UX/option exposure; no conversation inspection needed |
 | Phone Link eligibility | Phone model, Android/OEM version, app versions and settings-only feature list | Whether selected-device restrictions apply; no messages/photos/contacts/clipboard needed |
 | ASUS closed submenus | Gamut and timeout dropdown options, dedicated-memory choices, optional Quick Setting headings | Exact allowed menu values, without applying a setting |
@@ -101,7 +103,7 @@ Full component details are in their domain chapters. Current-user Appx inventory
 | Dolby entitlement | Activation information shown without account identity; selected endpoint/spatial-provider list | Distinguish OEM effects from separate headphone or home-theater entitlement |
 | Physical behavior | Deliberate future battery/fan/ALS/OLED/audio/camera/dock/sleep checks only where useful | Actual measured behavior under stated conditions; a different evidence class from UI presence |
 
-The MyASUS and Dolby screenshot batch has already resolved the broad OEM menu gap. Current AI UI evidence has been requested as a grouped batch; independent documentation and publication continue while waiting. No unknown above requires blocking another capability family or beginning Linux work.
+The MyASUS and Dolby screenshot batch resolved the broad OEM menu gap; follow-up screenshots resolved current Studio Effects and Snipping start-surface exposure. The user explicitly deferred deeper Paint/Photos AI inspection. Remaining gaps are retained without blocking another capability family or beginning Linux work.
 
 ## Privacy and collection boundary
 
