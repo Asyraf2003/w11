@@ -8,6 +8,7 @@ A practical reference of Windows 11 behavior, requirements, interfaces, and ASUS
 - [Windows Settings, shell and system behavior](docs/02-windows-system.md)
 - [Copilot, Windows AI and processing boundaries](docs/03-copilot-ai.md)
 - [ASUS Zenbook, MyASUS, OLED and input](docs/04-asus-myasus.md)
+- [Dolby, audio processing and Windows audio interfaces](docs/05-dolby-audio.md)
 
 Additional completed domains are added incrementally. There is no claim of absolute completeness: Windows builds, Store applications, OEM packages, accounts, region and cloud rollouts change the available surface.
 
