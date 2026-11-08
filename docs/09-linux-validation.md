@@ -2,6 +2,8 @@
 
 Phase 3 started **2026-11-08** at the user's request. Windows collection remains the reference; this phase checks useful Linux behavior without replacing the Windows installation. Paint/Photos AI depth and exhaustive physical keyboard checks remain outside the current scope. Android coverage remains about ecosystem capability, not the owner's phone.
 
+**Mission closure, November 8:** the user confirmed that the required MVP is the Windows knowledge harvest, with useful copies preserved. That MVP is complete for the agreed scope. The preliminary Linux software results below remain useful evidence; native hardware parity is a separate future task and does not hold this mission open. Boot-media preparation was stopped, with incomplete download artifacts retained privately as unverified files. No native boot, disk formatting or firmware/security change occurred.
+
 ## Test only where the result changes a migration decision
 
 The user clarified that this phase is **selective validation**, not retesting every catalog entry. Ordinary shortcuts and standard desktop functions need official behavior plus a Linux mapping; no shortcut-by-shortcut execution campaign is required. Existing passing evidence is reused unless a changed dependency or hardware revision gives a concrete reason to recheck.
@@ -114,7 +116,9 @@ journalctl -b -k --grep='cs35l|snd_hda|amdxdna|asus|amdgpu'
 
 Keep raw output private and retain missing-file, permission and driver errors. These commands do not write settings, but booting a real kernel can initialize hardware and firmware-managed state. No native Linux boot or physical hardware acceptance has occurred in this phase.
 
-## Next useful work
+## Deferred Linux follow-up
+
+The following belongs to a later migration/implementation session; no further testing or boot preparation is required to close the Windows harvest MVP.
 
 1. The generic software DSP and evidence-copy checks are complete. Reuse these results and the existing reference; add another lab test only for a specific unresolved compatibility problem in an actual selected workflow.
 2. Use a later authorized native Linux boot from separate media for **ASUS platform controls, real codec/amplifier routing/protection, OLED/display behavior, NPU driver/workload, radio/dock and suspend**. Existing Windows stays available as the comparison reference.
