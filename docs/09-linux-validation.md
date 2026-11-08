@@ -68,6 +68,42 @@ Git's attributes/configuration control line-ending conversion; the observed arch
 
 Generated-input commands, logs, results, original failing copies and successful LF export are preserved privately with SHA-256 manifests. The user-designated removable drive now contains a separate lab folder; its existing files and partitions were preserved. It is **storage for evidence and transfer artifacts**, not an already boot-tested Linux medium. No raw OEM tuning, impulse response or private reference source is published here.
 
+## Private Windows evidence: copied and read successfully from Linux
+
+The user-designated removable drive holds a separate private preservation folder. **64/64 files** matched the SHA-256 digest and byte length calculated from their original Windows sources. Linux Python **3.14.9** also parsed **39 JSON files** with UTF-8/BOM handling and checked the signatures of **18 PNG screenshots**. Remaining files include collection/provenance material. The JSON records, scripts and original screenshot pixels remain private.
+
+This establishes byte preservation and basic structured-data readability across the Windows → removable storage → Linux path. It does not verify every fact inside a capture, render every screenshot, restore a driver, or establish feature behavior. A SHA-256 source manifest, Linux verification result and verification-script hashes accompany the private copy; originals were not converted, moved or overwritten.
+
+## Native verification queue and boot constraints
+
+The selected removable medium is approximately **128 GB class**, **MBR**, with **one exFAT partition** and existing files. Only a new lab folder has been used. An ISO stored in that folder is a transfer artifact; its presence is not proof that the medium boots.
+
+Windows currently reports **Secure Boot enabled**. The official Arch installation ISO does **not** support Secure Boot as supplied, so it is not a ready native-boot path under the unchanged captured policy. No Secure Boot, firmware, TPM, boot-order or partition changes are authorized by merely preparing these files. A separately reviewed boot method is needed. A distribution with an appropriately signed boot chain, such as Ubuntu, can be considered for initial hardware discovery, but its result belongs to that distribution/kernel rather than proving Arch support. [Arch installation-image boundary](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Booting_an_installation_medium), [Ubuntu signed boot chain](https://documentation.ubuntu.com/security/security-features/platform-protections/secure-boot/).
+
+| Native batch | First evidence needed | Completion requires more than enumeration |
+|---|---|---|
+| ASUS battery and thermal policy | Bound platform driver, exposed threshold/profile choices and before/after charging-limit state | Correct threshold behavior and chosen profile; account for the driver initialization described in [ASUS controls](04-asus-myasus.md#linux-portability-platform-controls-need-firmware-evidence) |
+| Realtek/Cirrus audio | Codec/subsystem match, both amplifier components, firmware load and protection/calibration evidence | Controlled routing, quiet playback/recording and later quality comparison; synthetic DSP is not amplifier protection. [Audio driver match](05-dolby-audio.md#linux-driver-match-and-reusable-software-evidence) |
+| Radeon, panel and OLED | Native graphics driver, connector/mode and actual color/backlight/compositor controls | Display modes and chosen visual behavior; software pixel shifting is not panel compensation |
+| RGB/IR camera and microphone | Exact V4L2/ALSA endpoints and required permissions | A deliberately nonpersonal app workload and effect/capture quality; no biometric enrollment |
+| NPU | Exact PCI identity, bound amdxdna driver, firmware/runtime readiness | A supported model completes with recorded accelerator use. [AI runtime boundaries](03-copilot-ai.md#linux-validation-boundary-for-cpu-gpu-and-npu) |
+| Wi-Fi, Bluetooth and USB4/docks | Bound drivers, advertised roles and suitable peer/peripheral | Actual connection, data/display/audio path and reconnect behavior; no private peer content needed. [USB4 driver contract](https://www.kernel.org/doc/html/latest/admin-guide/thunderbolt.html) |
+| Suspend and power | Exposed `/sys/power/state` and `/sys/power/mem_sleep`, relevant driver errors | Controlled suspend/resume and measured battery behavior; an advertised state is insufficient. [Kernel sleep states](https://docs.kernel.org/admin-guide/pm/sleep-states.html) |
+| Android ecosystem | Selected tool/peer versions and granted test permissions | Deliberate nonpersonal transfers/mirroring rather than package presence. [Documented Linux routes](06-android-integration.md#linux-continuation-ecosystem-functions-separate-implementations) |
+
+Initial native discovery can stay read-only at the command level:
+
+```sh
+uname -r
+lspci -nnk
+cat /proc/asound/cards
+ls -ld /dev/accel /dev/dri /dev/snd
+cat /sys/power/state /sys/power/mem_sleep
+journalctl -b -k --grep='cs35l|snd_hda|amdxdna|asus|amdgpu'
+```
+
+Keep raw output private and retain missing-file, permission and driver errors. These commands do not write settings, but booting a real kernel can initialize hardware and firmware-managed state. No native Linux boot or physical hardware acceptance has occurred in this phase.
+
 ## Next useful work
 
 1. Reuse existing reference implementations and proofs before adding another test. Further lab checks should answer a migration decision: actual audio-provider compatibility, useful CPU inference or Android protocol tooling. Record the fixture and result instead of treating installation as success.
